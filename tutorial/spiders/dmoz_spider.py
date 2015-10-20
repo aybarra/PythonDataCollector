@@ -58,7 +58,7 @@ class DmozSpider(scrapy.Spider):
         self.logger.info("The number of QB letters is: %i", len(letter_count))
 
         # For each of the letter blocks
-        for letter in range(1,2):#len(letter_count)+1):
+        for letter in range(1, len(letter_count)+1):
             # Gets us to a particular letter
 #            xpath_inactive = response.xpath("//*/blockquote[" + str(letter) + "]/pre/a")
 ##            print "Number of inactive players for letter "+ str(letter) +" is: "+ str(len(xpath_inactive))
@@ -99,6 +99,9 @@ class DmozSpider(scrapy.Spider):
         self.logger.info("Player's name is: %s", player_name)
         self.logger.info("Player's pfr_name is: %s", pfr_name)
 
+        # Generate each of the players guids
+        r = requests.post("http://127.0.0.1:8000/pfrguids/", data = {"pro_football_ref_name": pfr_name, "player_full_name": player_name},
+                           auth=HTTPBasicAuth('andrasta', 'aA187759!'))
 #        with open("qb_names.txt", "a") as outfile:
 #            json.dump({'pro_football_ref_name':pfr_name, 'player_full_name':player_name}, outfile, indent=4)
 #            outfile.write("\n")
