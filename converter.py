@@ -9,7 +9,7 @@ import time
 import requests
 from requests.auth import HTTPBasicAuth
 
-def get_data(filename):
+def get_data(filename, active):
 
 #    players_B_BarkMa00_gamelog
     players_index = filename.find("players_")
@@ -28,7 +28,7 @@ def get_data(filename):
         index = 0
         for row in spamreader:
             row = ''.join(row)
-            print row
+#            print row
 
             # Getting the original column headers and putting into a dict
             if row.startswith(',') and headings_count == 0:
@@ -54,32 +54,138 @@ def get_data(filename):
 
     # Column header renaming
     columns = list(df_temp.columns.values)
-    print columns
+#    print columns
 
     columns_map = fetch_updated_column_names(columns, first_heading, heading_dict)
-    print columns_map
+#    print columns_map
 
     # Rename the columns in our dataframe
     df_temp.rename(columns=columns_map,inplace=True)
 
     pguid = fetch_player_guid(pfr_name)
 
-    # Iterate over the dataframe
-    for index, row in df_temp.iterrows():
-        ff_points = calculate_game_ffpoints(row)
-        print ff_points
-        payload = assemble_payload(pguid, row, index, ff_points)
-        print payload
-        create_game_entry(payload)
+    game_payloads, df_temp = create_game_entries(pguid, df_temp)
+    # Call the create_game_entries
 
+    season_payloads, df_temp = create_season_entries(pguid, df_temp)
+    # Call the create_season_entries
+
+    career_payload = assemble_career_payload(pguid, df_temp, active)
+    # Call create career_entry
     return df_temp
 
-def create_game_entry(payload):
-    r = requests.post("http://127.0.0.1:8000/games/",
-                      data=payload,
-                      auth=HTTPBasicAuth('andrasta', 'aA187759!'))
-    print r.status_code
-    print r.text
+
+def assemble_career_payload(pguid, df_career):
+    '''
+    'pguid', 'ff_pts', 'start_date', 'end_date', 'win_pct'
+    '''
+    payload = {'pguid': str(pguid),
+               'ff_pts': df_career['ff_pts'].sum(),
+               'start_date': df_season.index[0],
+               'end_date': # TODO,
+               'win_pct': df_career['Wins'].sum()/len(df_season.index),
+               'active': active}
+    return payload
+
+def create_season_entries(pguid, df_career):
+
+    '''
+    'pguid', 'year', 'games_played',
+    'pass_tds', 'pass_yards', 'ints_thrown', 'rec_tds',
+    'rec_yards', 'rush_tds', 'rush_yards', 'kr_tds', 'pr_tds',
+    'fumbles_lost', 'season_ff_pts'
+    '''
+    unique_years = pd.Series(df_career['Year']).unique()
+#    print unique_years
+    payloads = []
+    frames = []
+    for i in unique_years:
+        # Slice to get the rows that match a particular year
+        temp_df = df_career.loc[df_career['Year'] == i]
+        payload,temp_df = assemble_season_payload(pguid, temp_df)
+        frames.append(temp_df)
+        payloads.append(payload)
+#        print "Payload is:", payload
+    df_career = pd.concat(frames)
+    return payload, df_career
+
+'''
+Takes the sliced df and sums the appropriate columns
+    and inserts values into a json payload
+'''
+def assemble_season_payload(pguid, df_season):
+
+    # Generating a wins column to be used later
+    df_season['Wins'] = np.where('W' in df_season['Result'], 1, 0)
+    payload = {'pguid': str(pguid),
+               'year': df_season['Year'][0],
+               'game_count_played': len(df_season.index),
+               'fumbles_lost':0, #TODO
+               'season_ff_pts': df_season['ff_pts'].sum(),
+               'games_won': df_season['Wins'].sum()
+              }
+
+    # Conditionally setting the passing, rcving and rushing columns, setting to 0 otherwise
+    # Using this syntax:
+    # payload['value'] = 'Test' if 1 == 1 else 'NoTest'
+
+    # Passing stats
+    payload['pass_tds'] = pd.Series(df_season['Passing_TD']).sum() if 'Passing_TD' in df_season.columns else 0
+    payload['pass_yards'] = pd.Series(df_season['Passing_Yds']).sum() if 'Passing_Yds' in df_season.columns else 0
+    payload['ints_thrown'] = pd.Series(df_season['Passing_Int']).sum() if 'Passing_Int' in df_season.columns else 0
+
+    # Receiving stats
+    payload['rec_tds'] = pd.Series(df_season['Receiving_TD']).sum() if 'Receiving_TD' in df_season.columns else 0
+    payload['rec_yards'] = pd.Series(df_season['Receiving_Yds']).sum() if 'Receiving_Yds' in df_season.columns else 0
+
+    # Rushing stats
+    payload['rush_tds'] = pd.Series(df_season['Rushing_TD']).sum() if 'Rushing_TD' in df_season.columns else 0
+    payload['rush_yards'] = pd.Series(df_season['Rushing_Yds']).sum() if 'Rushing_Yds' in df_season.columns else 0
+
+    # Kick return stats
+    payload['kr_tds'] = pd.Series(df_season['Kick Returns_TD']).sum() if 'Kick Returns_TD' in df_season.columns else 0
+
+    # Punt return stats
+    payload['pr_tds'] = pd.Series(df_season['Punt Returns_TD']).sum() if 'Punt Returns_TD' in df_season.columns else 0
+
+    return payload, df_season
+
+'''
+    Executes the request to the Django server to make a season entry
+'''
+def create_season_entry(payload_list):
+    for i in payload_list:
+        r = requests.post("http://127.0.0.1:8000/seasons/",
+                          data=i,
+                          auth=HTTPBasicAuth('andrasta', 'aA187759!'))
+        print r.status_code
+
+'''
+    Iterates over the loaded df to calculate ff_points and create game entries
+'''
+def create_game_entries(pguid, df_career):
+    payloads = []
+     # Iterate over the dataframe
+    for index, row in df_career.iterrows():
+        ff_points = calculate_game_ffpoints(row)
+        print ff_points
+        df_career.ix[index, 'ff_pts'] = ff_points
+        payload = assemble_payload(pguid, row, index, ff_points)
+        print payload
+        payloads.append(payload)
+
+    return payloads, df_career
+#        create_game_entry(payload)
+
+'''
+    Executes the request to the Django server to make a game entry
+'''
+def create_game_entry(payload_list):
+    for i in payload_list:
+        r = requests.post("http://127.0.0.1:8000/games/",
+                          data=i,
+                          auth=HTTPBasicAuth('andrasta', 'aA187759!'))
+        print r.status_code
 
 def assemble_payload(pguid, row, index, ff_points):
     data = {'pguid': str(pguid),
@@ -189,7 +295,7 @@ def fetch_updated_column_names(columns, first_heading, heading_dict):
         item = heading_dict[temp_index]+ '_' + item.split('.')[0]
         columns_updated.append(item)
         temp_index+=1
-    print columns_updated
+#    print columns_updated
 
     # Pair the old names to the new names
     columns_map = {}
@@ -205,19 +311,8 @@ def fetch_player_guid(pfr_name):
     r = requests.get("http://127.0.0.1:8000/pfrguids/"+pfr_name+"/guid", auth=HTTPBasicAuth('andrasta', 'aA187759!'))
 #    print "Players guid is: ", str(r.json())
     pguid = r.json()["pguid"]
-    print "pguid is:", pguid
+#    print "pguid is:", pguid
     return pguid
 
-'''
-    r = requests.post("http://127.0.0.1:8000/games/",
-                          auth=HTTPBasicAuth('andrasta', 'aA187759!'))
-'''
-
-#print os.path.exists("../tutorial/QB/players_B_BarkMa00_gamelog___stats.csv")
 stats_dir = os.path.join(os.getcwd(), "tutorial/")
-print get_data(os.path.join(stats_dir, "QB/players_B_BarkMa00_gamelog___stats.csv"))
-#with open('tutorial/QB/players_B_BarkMa00_gamelog___stats.csv', 'rb') as csvfile:
-#    spamreader = csv.reader(csvfile, delimiter=' ', quotechar='|')
-#    for row in spamreader:
-#        print ', '.join(row)
-#        print '\n'
+print get_data(os.path.join(stats_dir, "QB/players_B_BarkMa00_gamelog___stats.csv"), True)

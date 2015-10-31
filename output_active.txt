@@ -1,0 +1,1263 @@
+2015-10-31 01:49:51 [scrapy] INFO: Scrapy 1.0.3 started (bot: tutorial)
+2015-10-31 01:49:51 [scrapy] INFO: Optional features available: ssl, http11, boto
+2015-10-31 01:49:51 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'tutorial.spiders', 'FEED_URI': 'active_qbs.json', 'SPIDER_MODULES': ['tutorial.spiders'], 'BOT_NAME': 'tutorial', 'FEED_FORMAT': 'json', 'LOG_FILE': 'output_active.txt'}
+2015-10-31 01:49:51 [scrapy] INFO: Enabled extensions: CloseSpider, FeedExporter, TelnetConsole, LogStats, CoreStats, SpiderState
+2015-10-31 01:49:51 [dmoz] INFO: Selection is: active
+2015-10-31 01:49:51 [dmoz] INFO: Output directory is: QB_Active/
+2015-10-31 01:49:51 [dmoz] INFO: Position type is: qb
+2015-10-31 01:49:51 [dmoz] INFO: Collect csvs is set to: False
+2015-10-31 01:49:53 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:57626/hub/session {"desiredCapabilities": {"platform": "ANY", "browserName": "firefox", "version": "", "javascriptEnabled": true}}
+2015-10-31 01:49:54 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2015-10-31 01:49:54 [scrapy] INFO: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, UserAgentMiddleware, RetryMiddleware, DefaultHeadersMiddleware, MetaRefreshMiddleware, HttpCompressionMiddleware, RedirectMiddleware, CookiesMiddleware, ChunkedTransferMiddleware, DownloaderStats
+2015-10-31 01:49:54 [scrapy] INFO: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
+2015-10-31 01:49:54 [scrapy] INFO: Enabled item pipelines: 
+2015-10-31 01:49:54 [scrapy] INFO: Spider opened
+2015-10-31 01:49:54 [scrapy] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2015-10-31 01:49:54 [scrapy] DEBUG: Telnet console listening on 127.0.0.1:6023
+2015-10-31 01:49:54 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/qbindex.htm> (referer: None)
+2015-10-31 01:49:54 [dmoz] INFO: Visiting url: http://www.pro-football-reference.com/players/qbindex.htm
+2015-10-31 01:49:54 [dmoz] INFO: The number of QB letters is: 25
+2015-10-31 01:49:54 [dmoz] INFO: String letter is: A
+2015-10-31 01:49:54 [dmoz] INFO: Number of active players for letter A is: 1
+2015-10-31 01:49:54 [dmoz] INFO: String letter is: B
+2015-10-31 01:49:54 [dmoz] INFO: Number of active players for letter B is: 9
+2015-10-31 01:49:54 [dmoz] INFO: String letter is: C
+2015-10-31 01:49:54 [dmoz] INFO: Number of active players for letter C is: 7
+2015-10-31 01:49:54 [dmoz] INFO: String letter is: D
+2015-10-31 01:49:54 [dmoz] INFO: Number of active players for letter D is: 8
+2015-10-31 01:49:54 [dmoz] INFO: String letter is: E
+2015-10-31 01:49:54 [dmoz] INFO: Number of active players for letter E is: 2
+2015-10-31 01:49:54 [dmoz] INFO: String letter is: F
+2015-10-31 01:49:54 [dmoz] INFO: Number of active players for letter F is: 5
+2015-10-31 01:49:54 [dmoz] INFO: String letter is: G
+2015-10-31 01:49:54 [dmoz] INFO: Number of active players for letter G is: 8
+2015-10-31 01:49:54 [dmoz] INFO: String letter is: H
+2015-10-31 01:49:54 [dmoz] INFO: Number of active players for letter H is: 6
+2015-10-31 01:49:54 [dmoz] INFO: String letter is: I
+2015-10-31 01:49:54 [dmoz] INFO: Number of active players for letter I is: 0
+2015-10-31 01:49:54 [dmoz] INFO: String letter is: J
+2015-10-31 01:49:54 [dmoz] INFO: Number of active players for letter J is: 3
+2015-10-31 01:49:54 [dmoz] INFO: String letter is: K
+2015-10-31 01:49:54 [dmoz] INFO: Number of active players for letter K is: 4
+2015-10-31 01:49:54 [dmoz] INFO: String letter is: L
+2015-10-31 01:49:54 [dmoz] INFO: Number of active players for letter L is: 4
+2015-10-31 01:49:54 [dmoz] INFO: String letter is: M
+2015-10-31 01:49:54 [dmoz] INFO: Number of active players for letter M is: 16
+2015-10-31 01:49:54 [dmoz] INFO: String letter is: N
+2015-10-31 01:49:54 [dmoz] INFO: Number of active players for letter N is: 2
+2015-10-31 01:49:54 [dmoz] INFO: String letter is: O
+2015-10-31 01:49:54 [dmoz] INFO: Number of active players for letter O is: 2
+2015-10-31 01:49:54 [dmoz] INFO: String letter is: P
+2015-10-31 01:49:54 [dmoz] INFO: Number of active players for letter P is: 5
+2015-10-31 01:49:54 [dmoz] INFO: String letter is: Q
+2015-10-31 01:49:54 [dmoz] INFO: Number of active players for letter Q is: 1
+2015-10-31 01:49:54 [dmoz] INFO: String letter is: R
+2015-10-31 01:49:54 [dmoz] INFO: Number of active players for letter R is: 6
+2015-10-31 01:49:54 [dmoz] INFO: String letter is: S
+2015-10-31 01:49:54 [dmoz] INFO: Number of active players for letter S is: 12
+2015-10-31 01:49:54 [dmoz] INFO: String letter is: T
+2015-10-31 01:49:54 [dmoz] INFO: Number of active players for letter T is: 7
+2015-10-31 01:49:54 [dmoz] INFO: String letter is: U
+2015-10-31 01:49:54 [dmoz] INFO: Number of active players for letter U is: 0
+2015-10-31 01:49:54 [dmoz] INFO: String letter is: V
+2015-10-31 01:49:54 [dmoz] INFO: Number of active players for letter V is: 2
+2015-10-31 01:49:54 [dmoz] INFO: String letter is: W
+2015-10-31 01:49:54 [dmoz] INFO: Number of active players for letter W is: 6
+2015-10-31 01:49:54 [dmoz] INFO: String letter is: Y
+2015-10-31 01:49:54 [dmoz] INFO: Number of active players for letter Y is: 1
+2015-10-31 01:49:54 [dmoz] INFO: String letter is: Z
+2015-10-31 01:49:54 [dmoz] INFO: Number of active players for letter Z is: 0
+2015-10-31 01:49:55 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/A/AndeDe00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:49:55 [dmoz] INFO: Player's name is: Derek Anderson
+2015-10-31 01:49:55 [dmoz] INFO: Player's pfr_name is: AndeDe00
+2015-10-31 01:49:55 [dmoz] INFO: Player's draft year is: 2005
+2015-10-31 01:49:55 [dmoz] INFO: Derek Anderson has college stats
+2015-10-31 01:49:55 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/A/AndeDe00.htm>
+{'draft_year': 2005,
+ 'pfr_name': 'AndeDe00',
+ 'player_name': u'Derek Anderson',
+ 'position_type': 'qb'}
+2015-10-31 01:49:56 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/D/DevlPa00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:49:56 [dmoz] INFO: Player's name is: Pat Devlin
+2015-10-31 01:49:56 [dmoz] INFO: Player's pfr_name is: DevlPa00
+2015-10-31 01:49:56 [dmoz] INFO: Player's draft year is: -1
+2015-10-31 01:49:56 [dmoz] ERROR: No game logs link for Pat Devlin
+2015-10-31 01:49:56 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/D/DevlPa00.htm>
+{'draft_year': -1,
+ 'pfr_name': 'DevlPa00',
+ 'player_name': u'Pat Devlin',
+ 'position_type': 'qb'}
+2015-10-31 01:49:57 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/D/DaviDo02.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:49:57 [dmoz] INFO: Player's name is: Dominique Davis
+2015-10-31 01:49:57 [dmoz] INFO: Player's pfr_name is: DaviDo02
+2015-10-31 01:49:57 [dmoz] INFO: Player's draft year is: -1
+2015-10-31 01:49:57 [dmoz] INFO: Dominique Davis has college stats
+2015-10-31 01:49:57 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/D/DaviDo02.htm>
+{'draft_year': -1,
+ 'pfr_name': 'DaviDo02',
+ 'player_name': u'Dominique Davis',
+ 'position_type': 'qb'}
+2015-10-31 01:49:58 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/D/DaviAu00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:49:58 [dmoz] INFO: Player's name is: Austin Davis
+2015-10-31 01:49:58 [dmoz] INFO: Player's pfr_name is: DaviAu00
+2015-10-31 01:49:58 [dmoz] INFO: Player's draft year is: -1
+2015-10-31 01:49:58 [dmoz] INFO: Austin Davis has college stats
+2015-10-31 01:49:58 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/D/DaviAu00.htm>
+{'draft_year': -1,
+ 'pfr_name': 'DaviAu00',
+ 'player_name': u'Austin Davis',
+ 'position_type': 'qb'}
+2015-10-31 01:49:59 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/D/DaniB.00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:49:59 [dmoz] INFO: Player's name is: B.J. Daniels
+2015-10-31 01:49:59 [dmoz] INFO: Player's pfr_name is: DaniB.00
+2015-10-31 01:49:59 [dmoz] INFO: Player's draft year is: 2013
+2015-10-31 01:49:59 [dmoz] INFO: B.J. Daniels has college stats
+2015-10-31 01:49:59 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/D/DaniB.00.htm>
+{'draft_year': 2013,
+ 'pfr_name': 'DaniB.00',
+ 'player_name': u'B.J. Daniels',
+ 'position_type': 'qb'}
+2015-10-31 01:50:00 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/D/DaniCh00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:00 [dmoz] INFO: Player's name is: Chase Daniel
+2015-10-31 01:50:00 [dmoz] INFO: Player's pfr_name is: DaniCh00
+2015-10-31 01:50:00 [dmoz] INFO: Player's draft year is: -1
+2015-10-31 01:50:00 [dmoz] INFO: Chase Daniel has college stats
+2015-10-31 01:50:00 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/D/DaniCh00.htm>
+{'draft_year': -1,
+ 'pfr_name': 'DaniCh00',
+ 'player_name': u'Chase Daniel',
+ 'position_type': 'qb'}
+2015-10-31 01:50:01 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/D/DaltAn00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:01 [dmoz] INFO: Player's name is: Andy Dalton
+2015-10-31 01:50:01 [dmoz] INFO: Player's pfr_name is: DaltAn00
+2015-10-31 01:50:01 [dmoz] INFO: Player's draft year is: 2011
+2015-10-31 01:50:01 [dmoz] INFO: Andy Dalton has college stats
+2015-10-31 01:50:01 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/D/DaltAn00.htm>
+{'draft_year': 2011,
+ 'pfr_name': 'DaltAn00',
+ 'player_name': u'Andy Dalton',
+ 'position_type': 'qb'}
+2015-10-31 01:50:02 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/C/CutlJa00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:02 [dmoz] INFO: Player's name is: Jay Cutler
+2015-10-31 01:50:02 [dmoz] INFO: Player's pfr_name is: CutlJa00
+2015-10-31 01:50:02 [dmoz] INFO: Player's draft year is: 2006
+2015-10-31 01:50:02 [dmoz] INFO: Jay Cutler has college stats
+2015-10-31 01:50:02 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/C/CutlJa00.htm>
+{'draft_year': 2006,
+ 'pfr_name': 'CutlJa00',
+ 'player_name': u'Jay Cutler',
+ 'position_type': 'qb'}
+2015-10-31 01:50:03 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/C/CousKi00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:03 [dmoz] INFO: Player's name is: Kirk Cousins
+2015-10-31 01:50:03 [dmoz] INFO: Player's pfr_name is: CousKi00
+2015-10-31 01:50:03 [dmoz] INFO: Player's draft year is: 2012
+2015-10-31 01:50:03 [dmoz] INFO: Kirk Cousins has college stats
+2015-10-31 01:50:03 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/C/CousKi00.htm>
+{'draft_year': 2012,
+ 'pfr_name': 'CousKi00',
+ 'player_name': u'Kirk Cousins',
+ 'position_type': 'qb'}
+2015-10-31 01:50:04 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/C/ClemKe00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:04 [dmoz] INFO: Player's name is: Kellen Clemens
+2015-10-31 01:50:04 [dmoz] INFO: Player's pfr_name is: ClemKe00
+2015-10-31 01:50:04 [dmoz] INFO: Player's draft year is: 2006
+2015-10-31 01:50:04 [dmoz] INFO: Kellen Clemens has college stats
+2015-10-31 01:50:04 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/C/ClemKe00.htm>
+{'draft_year': 2006,
+ 'pfr_name': 'ClemKe00',
+ 'player_name': u'Kellen Clemens',
+ 'position_type': 'qb'}
+2015-10-31 01:50:05 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/C/ClauJi00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:05 [dmoz] INFO: Player's name is: Jimmy Clausen
+2015-10-31 01:50:05 [dmoz] INFO: Player's pfr_name is: ClauJi00
+2015-10-31 01:50:05 [dmoz] INFO: Player's draft year is: 2010
+2015-10-31 01:50:05 [dmoz] INFO: Jimmy Clausen has college stats
+2015-10-31 01:50:05 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/C/ClauJi00.htm>
+{'draft_year': 2010,
+ 'pfr_name': 'ClauJi00',
+ 'player_name': u'Jimmy Clausen',
+ 'position_type': 'qb'}
+2015-10-31 01:50:06 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/C/CassMa00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:06 [dmoz] INFO: Player's name is: Matt Cassel
+2015-10-31 01:50:06 [dmoz] INFO: Player's pfr_name is: CassMa00
+2015-10-31 01:50:06 [dmoz] INFO: Player's draft year is: 2005
+2015-10-31 01:50:06 [dmoz] INFO: Matt Cassel has college stats
+2015-10-31 01:50:06 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/C/CassMa00.htm>
+{'draft_year': 2005,
+ 'pfr_name': 'CassMa00',
+ 'player_name': u'Matt Cassel',
+ 'position_type': 'qb'}
+2015-10-31 01:50:07 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/C/CarrDe02.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:07 [dmoz] INFO: Player's name is: Derek Carr
+2015-10-31 01:50:07 [dmoz] INFO: Player's pfr_name is: CarrDe02
+2015-10-31 01:50:07 [dmoz] INFO: Player's draft year is: 2014
+2015-10-31 01:50:07 [dmoz] INFO: Derek Carr has college stats
+2015-10-31 01:50:07 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/C/CarrDe02.htm>
+{'draft_year': 2014,
+ 'pfr_name': 'CarrDe02',
+ 'player_name': u'Derek Carr',
+ 'position_type': 'qb'}
+2015-10-31 01:50:08 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/C/CampJa00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:08 [dmoz] INFO: Player's name is: Jason Campbell
+2015-10-31 01:50:08 [dmoz] INFO: Player's pfr_name is: CampJa00
+2015-10-31 01:50:08 [dmoz] INFO: Player's draft year is: 2005
+2015-10-31 01:50:08 [dmoz] INFO: Jason Campbell has college stats
+2015-10-31 01:50:08 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/C/CampJa00.htm>
+{'draft_year': 2005,
+ 'pfr_name': 'CampJa00',
+ 'player_name': u'Jason Campbell',
+ 'position_type': 'qb'}
+2015-10-31 01:50:09 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/B/BridTe00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:09 [dmoz] INFO: Player's name is: Teddy Bridgewater
+2015-10-31 01:50:09 [dmoz] INFO: Player's pfr_name is: BridTe00
+2015-10-31 01:50:09 [dmoz] INFO: Player's draft year is: 2014
+2015-10-31 01:50:09 [dmoz] INFO: Teddy Bridgewater has college stats
+2015-10-31 01:50:09 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/B/BridTe00.htm>
+{'draft_year': 2014,
+ 'pfr_name': 'BridTe00',
+ 'player_name': u'Teddy Bridgewater',
+ 'position_type': 'qb'}
+2015-10-31 01:50:10 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/B/BreeDr00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:10 [dmoz] INFO: Player's name is: Drew Brees
+2015-10-31 01:50:10 [dmoz] INFO: Player's pfr_name is: BreeDr00
+2015-10-31 01:50:10 [dmoz] INFO: Player's draft year is: 2001
+2015-10-31 01:50:10 [dmoz] INFO: Drew Brees has college stats
+2015-10-31 01:50:10 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/B/BreeDr00.htm>
+{'draft_year': 2001,
+ 'pfr_name': 'BreeDr00',
+ 'player_name': u'Drew Brees',
+ 'position_type': 'qb'}
+2015-10-31 01:50:11 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/Y/YateT.00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:11 [dmoz] INFO: Player's name is: T.J. Yates
+2015-10-31 01:50:11 [dmoz] INFO: Player's pfr_name is: YateT.00
+2015-10-31 01:50:11 [dmoz] INFO: Player's draft year is: 2011
+2015-10-31 01:50:11 [dmoz] INFO: T.J. Yates has college stats
+2015-10-31 01:50:11 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/Y/YateT.00.htm>
+{'draft_year': 2011,
+ 'pfr_name': 'YateT.00',
+ 'player_name': u'T.J. Yates',
+ 'position_type': 'qb'}
+2015-10-31 01:50:12 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/W/WinsJa00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:12 [dmoz] INFO: Player's name is: Jameis Winston
+2015-10-31 01:50:12 [dmoz] INFO: Player's pfr_name is: WinsJa00
+2015-10-31 01:50:12 [dmoz] INFO: Player's draft year is: 2015
+2015-10-31 01:50:12 [dmoz] INFO: Jameis Winston has college stats
+2015-10-31 01:50:12 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/W/WinsJa00.htm>
+{'draft_year': 2015,
+ 'pfr_name': 'WinsJa00',
+ 'player_name': u'Jameis Winston',
+ 'position_type': 'qb'}
+2015-10-31 01:50:13 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/W/WilsTy00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:13 [dmoz] INFO: Player's name is: Tyler Wilson
+2015-10-31 01:50:13 [dmoz] INFO: Player's pfr_name is: WilsTy00
+2015-10-31 01:50:13 [dmoz] INFO: Player's draft year is: 2013
+2015-10-31 01:50:13 [dmoz] ERROR: No game logs link for Tyler Wilson
+2015-10-31 01:50:13 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/W/WilsTy00.htm>
+{'draft_year': 2013,
+ 'pfr_name': 'WilsTy00',
+ 'player_name': u'Tyler Wilson',
+ 'position_type': 'qb'}
+2015-10-31 01:50:14 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/W/WilsRu00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:14 [dmoz] INFO: Player's name is: Russell Wilson
+2015-10-31 01:50:14 [dmoz] INFO: Player's pfr_name is: WilsRu00
+2015-10-31 01:50:14 [dmoz] INFO: Player's draft year is: 2012
+2015-10-31 01:50:14 [dmoz] INFO: Russell Wilson has college stats
+2015-10-31 01:50:14 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/W/WilsRu00.htm>
+{'draft_year': 2012,
+ 'pfr_name': 'WilsRu00',
+ 'player_name': u'Russell Wilson',
+ 'position_type': 'qb'}
+2015-10-31 01:50:15 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/W/WhitCh02.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:15 [dmoz] INFO: Player's name is: Charlie Whitehurst
+2015-10-31 01:50:15 [dmoz] INFO: Player's pfr_name is: WhitCh02
+2015-10-31 01:50:15 [dmoz] INFO: Player's draft year is: 2006
+2015-10-31 01:50:15 [dmoz] INFO: Charlie Whitehurst has college stats
+2015-10-31 01:50:15 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/W/WhitCh02.htm>
+{'draft_year': 2006,
+ 'pfr_name': 'WhitCh02',
+ 'player_name': u'Charlie Whitehurst',
+ 'position_type': 'qb'}
+2015-10-31 01:50:16 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/W/WennKe00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:16 [dmoz] INFO: Player's name is: Keith Wenning
+2015-10-31 01:50:16 [dmoz] INFO: Player's pfr_name is: WennKe00
+2015-10-31 01:50:16 [dmoz] INFO: Player's draft year is: 2014
+2015-10-31 01:50:16 [dmoz] ERROR: No game logs link for Keith Wenning
+2015-10-31 01:50:16 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/W/WennKe00.htm>
+{'draft_year': 2014,
+ 'pfr_name': 'WennKe00',
+ 'player_name': u'Keith Wenning',
+ 'position_type': 'qb'}
+2015-10-31 01:50:17 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/W/WeedBr00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:17 [dmoz] INFO: Player's name is: Brandon Weeden
+2015-10-31 01:50:17 [dmoz] INFO: Player's pfr_name is: WeedBr00
+2015-10-31 01:50:17 [dmoz] INFO: Player's draft year is: 2012
+2015-10-31 01:50:17 [dmoz] INFO: Brandon Weeden has college stats
+2015-10-31 01:50:17 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/W/WeedBr00.htm>
+{'draft_year': 2012,
+ 'pfr_name': 'WeedBr00',
+ 'player_name': u'Brandon Weeden',
+ 'position_type': 'qb'}
+2015-10-31 01:50:18 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/V/VickMi00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:18 [dmoz] INFO: Player's name is: Michael Vick
+2015-10-31 01:50:18 [dmoz] INFO: Player's pfr_name is: VickMi00
+2015-10-31 01:50:18 [dmoz] INFO: Player's draft year is: 2001
+2015-10-31 01:50:18 [dmoz] INFO: Michael Vick has college stats
+2015-10-31 01:50:18 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/V/VickMi00.htm>
+{'draft_year': 2001,
+ 'pfr_name': 'VickMi00',
+ 'player_name': u'Michael Vick',
+ 'position_type': 'qb'}
+2015-10-31 01:50:19 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/V/VaugDu00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:19 [dmoz] INFO: Player's name is: Dustin Vaughan
+2015-10-31 01:50:19 [dmoz] INFO: Player's pfr_name is: VaugDu00
+2015-10-31 01:50:19 [dmoz] INFO: Player's draft year is: -1
+2015-10-31 01:50:19 [dmoz] ERROR: No game logs link for Dustin Vaughan
+2015-10-31 01:50:19 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/V/VaugDu00.htm>
+{'draft_year': -1,
+ 'pfr_name': 'VaugDu00',
+ 'player_name': u'Dustin Vaughan',
+ 'position_type': 'qb'}
+2015-10-31 01:50:20 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/T/TuelJe00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:20 [dmoz] INFO: Player's name is: Jeff Tuel
+2015-10-31 01:50:20 [dmoz] INFO: Player's pfr_name is: TuelJe00
+2015-10-31 01:50:20 [dmoz] INFO: Player's draft year is: -1
+2015-10-31 01:50:20 [dmoz] INFO: Jeff Tuel has college stats
+2015-10-31 01:50:20 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/T/TuelJe00.htm>
+{'draft_year': -1,
+ 'pfr_name': 'TuelJe00',
+ 'player_name': u'Jeff Tuel',
+ 'position_type': 'qb'}
+2015-10-31 01:50:21 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/T/TolzSc00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:21 [dmoz] INFO: Player's name is: Scott Tolzien
+2015-10-31 01:50:21 [dmoz] INFO: Player's pfr_name is: TolzSc00
+2015-10-31 01:50:21 [dmoz] INFO: Player's draft year is: -1
+2015-10-31 01:50:21 [dmoz] INFO: Scott Tolzien has no college stats
+2015-10-31 01:50:21 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/T/TolzSc00.htm>
+{'draft_year': -1,
+ 'pfr_name': 'TolzSc00',
+ 'player_name': u'Scott Tolzien',
+ 'position_type': 'qb'}
+2015-10-31 01:50:22 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/T/ThomLo00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:22 [dmoz] INFO: Player's name is: Logan Thomas
+2015-10-31 01:50:22 [dmoz] INFO: Player's pfr_name is: ThomLo00
+2015-10-31 01:50:22 [dmoz] INFO: Player's draft year is: 2014
+2015-10-31 01:50:22 [dmoz] INFO: Logan Thomas has college stats
+2015-10-31 01:50:22 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/T/ThomLo00.htm>
+{'draft_year': 2014,
+ 'pfr_name': 'ThomLo00',
+ 'player_name': u'Logan Thomas',
+ 'position_type': 'qb'}
+2015-10-31 01:50:23 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/T/ThigTy00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:23 [dmoz] INFO: Player's name is: Tyler Thigpen
+2015-10-31 01:50:23 [dmoz] INFO: Player's pfr_name is: ThigTy00
+2015-10-31 01:50:23 [dmoz] INFO: Player's draft year is: 2007
+2015-10-31 01:50:23 [dmoz] INFO: Tyler Thigpen has no college stats
+2015-10-31 01:50:23 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/T/ThigTy00.htm>
+{'draft_year': 2007,
+ 'pfr_name': 'ThigTy00',
+ 'player_name': u'Tyler Thigpen',
+ 'position_type': 'qb'}
+2015-10-31 01:50:24 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/T/TaylTy00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:24 [dmoz] INFO: Player's name is: Tyrod Taylor
+2015-10-31 01:50:24 [dmoz] INFO: Player's pfr_name is: TaylTy00
+2015-10-31 01:50:24 [dmoz] INFO: Player's draft year is: 2011
+2015-10-31 01:50:24 [dmoz] INFO: Tyrod Taylor has college stats
+2015-10-31 01:50:24 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/T/TaylTy00.htm>
+{'draft_year': 2011,
+ 'pfr_name': 'TaylTy00',
+ 'player_name': u'Tyrod Taylor',
+ 'position_type': 'qb'}
+2015-10-31 01:50:25 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/T/TannAl00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:25 [dmoz] INFO: Player's name is: Alex Tanney
+2015-10-31 01:50:25 [dmoz] INFO: Player's pfr_name is: TannAl00
+2015-10-31 01:50:25 [dmoz] INFO: Player's draft year is: -1
+2015-10-31 01:50:25 [dmoz] ERROR: No game logs link for Alex Tanney
+2015-10-31 01:50:25 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/T/TannAl00.htm>
+{'draft_year': -1,
+ 'pfr_name': 'TannAl00',
+ 'player_name': u'Alex Tanney',
+ 'position_type': 'qb'}
+2015-10-31 01:50:26 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/T/TannRy00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:26 [dmoz] INFO: Player's name is: Ryan Tannehill
+2015-10-31 01:50:26 [dmoz] INFO: Player's pfr_name is: TannRy00
+2015-10-31 01:50:26 [dmoz] INFO: Player's draft year is: 2012
+2015-10-31 01:50:26 [dmoz] INFO: Ryan Tannehill has college stats
+2015-10-31 01:50:26 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/T/TannRy00.htm>
+{'draft_year': 2012,
+ 'pfr_name': 'TannRy00',
+ 'player_name': u'Ryan Tannehill',
+ 'position_type': 'qb'}
+2015-10-31 01:50:27 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/S/StanRi00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:27 [dmoz] INFO: Player's name is: Ricky Stanzi
+2015-10-31 01:50:27 [dmoz] INFO: Player's pfr_name is: StanRi00
+2015-10-31 01:50:27 [dmoz] INFO: Player's draft year is: 2011
+2015-10-31 01:50:27 [dmoz] ERROR: No game logs link for Ricky Stanzi
+2015-10-31 01:50:27 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/S/StanRi00.htm>
+{'draft_year': 2011,
+ 'pfr_name': 'StanRi00',
+ 'player_name': u'Ricky Stanzi',
+ 'position_type': 'qb'}
+2015-10-31 01:50:28 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/S/StanDr00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:28 [dmoz] INFO: Player's name is: Drew Stanton
+2015-10-31 01:50:28 [dmoz] INFO: Player's pfr_name is: StanDr00
+2015-10-31 01:50:28 [dmoz] INFO: Player's draft year is: 2007
+2015-10-31 01:50:28 [dmoz] INFO: Drew Stanton has college stats
+2015-10-31 01:50:28 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/S/StanDr00.htm>
+{'draft_year': 2007,
+ 'pfr_name': 'StanDr00',
+ 'player_name': u'Drew Stanton',
+ 'position_type': 'qb'}
+2015-10-31 01:50:29 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/S/StafMa00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:29 [dmoz] INFO: Player's name is: Matthew Stafford
+2015-10-31 01:50:29 [dmoz] INFO: Player's pfr_name is: StafMa00
+2015-10-31 01:50:29 [dmoz] INFO: Player's draft year is: 2009
+2015-10-31 01:50:29 [dmoz] INFO: Matthew Stafford has college stats
+2015-10-31 01:50:29 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/S/StafMa00.htm>
+{'draft_year': 2009,
+ 'pfr_name': 'StafMa00',
+ 'player_name': u'Matthew Stafford',
+ 'position_type': 'qb'}
+2015-10-31 01:50:30 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/S/SoreBr00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:30 [dmoz] INFO: Player's name is: Brad Sorensen
+2015-10-31 01:50:30 [dmoz] INFO: Player's pfr_name is: SoreBr00
+2015-10-31 01:50:30 [dmoz] INFO: Player's draft year is: 2013
+2015-10-31 01:50:30 [dmoz] ERROR: No game logs link for Brad Sorensen
+2015-10-31 01:50:30 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/S/SoreBr00.htm>
+{'draft_year': 2013,
+ 'pfr_name': 'SoreBr00',
+ 'player_name': u'Brad Sorensen',
+ 'position_type': 'qb'}
+2015-10-31 01:50:31 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/S/SmitGe00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:31 [dmoz] INFO: Player's name is: Geno Smith
+2015-10-31 01:50:31 [dmoz] INFO: Player's pfr_name is: SmitGe00
+2015-10-31 01:50:31 [dmoz] INFO: Player's draft year is: 2013
+2015-10-31 01:50:31 [dmoz] INFO: Geno Smith has college stats
+2015-10-31 01:50:31 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/S/SmitGe00.htm>
+{'draft_year': 2013,
+ 'pfr_name': 'SmitGe00',
+ 'player_name': u'Geno Smith',
+ 'position_type': 'qb'}
+2015-10-31 01:50:32 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/S/SmitAl03.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:32 [dmoz] INFO: Player's name is: Alex Smith
+2015-10-31 01:50:32 [dmoz] INFO: Player's pfr_name is: SmitAl03
+2015-10-31 01:50:32 [dmoz] INFO: Player's draft year is: 2005
+2015-10-31 01:50:32 [dmoz] INFO: Alex Smith has college stats
+2015-10-31 01:50:32 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/S/SmitAl03.htm>
+{'draft_year': 2005,
+ 'pfr_name': 'SmitAl03',
+ 'player_name': u'Alex Smith',
+ 'position_type': 'qb'}
+2015-10-31 01:50:33 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/S/SimmMa00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:33 [dmoz] INFO: Player's name is: Matt Simms
+2015-10-31 01:50:33 [dmoz] INFO: Player's pfr_name is: SimmMa00
+2015-10-31 01:50:33 [dmoz] INFO: Player's draft year is: -1
+2015-10-31 01:50:33 [dmoz] INFO: Matt Simms has college stats
+2015-10-31 01:50:33 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/S/SimmMa00.htm>
+{'draft_year': -1,
+ 'pfr_name': 'SimmMa00',
+ 'player_name': u'Matt Simms',
+ 'position_type': 'qb'}
+2015-10-31 01:50:34 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/S/ShawCo00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:34 [dmoz] INFO: Player's name is: Connor Shaw
+2015-10-31 01:50:34 [dmoz] INFO: Player's pfr_name is: ShawCo00
+2015-10-31 01:50:34 [dmoz] INFO: Player's draft year is: -1
+2015-10-31 01:50:34 [dmoz] INFO: Connor Shaw has college stats
+2015-10-31 01:50:34 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/S/ShawCo00.htm>
+{'draft_year': -1,
+ 'pfr_name': 'ShawCo00',
+ 'player_name': u'Connor Shaw',
+ 'position_type': 'qb'}
+2015-10-31 01:50:35 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/S/ScotMa01.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:35 [dmoz] INFO: Player's name is: Matt Scott
+2015-10-31 01:50:35 [dmoz] INFO: Player's pfr_name is: ScotMa01
+2015-10-31 01:50:35 [dmoz] INFO: Player's draft year is: -1
+2015-10-31 01:50:35 [dmoz] ERROR: No game logs link for Matt Scott
+2015-10-31 01:50:35 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/S/ScotMa01.htm>
+{'draft_year': -1,
+ 'pfr_name': 'ScotMa01',
+ 'player_name': u'Matt Scott',
+ 'position_type': 'qb'}
+2015-10-31 01:50:36 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/S/SchaMa00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:36 [dmoz] INFO: Player's name is: Matt Schaub
+2015-10-31 01:50:36 [dmoz] INFO: Player's pfr_name is: SchaMa00
+2015-10-31 01:50:36 [dmoz] INFO: Player's draft year is: 2004
+2015-10-31 01:50:36 [dmoz] INFO: Matt Schaub has college stats
+2015-10-31 01:50:36 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/S/SchaMa00.htm>
+{'draft_year': 2004,
+ 'pfr_name': 'SchaMa00',
+ 'player_name': u'Matt Schaub',
+ 'position_type': 'qb'}
+2015-10-31 01:50:37 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/S/SavaTo00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:37 [dmoz] INFO: Player's name is: Tom Savage
+2015-10-31 01:50:37 [dmoz] INFO: Player's pfr_name is: SavaTo00
+2015-10-31 01:50:37 [dmoz] INFO: Player's draft year is: 2014
+2015-10-31 01:50:37 [dmoz] INFO: Tom Savage has college stats
+2015-10-31 01:50:37 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/S/SavaTo00.htm>
+{'draft_year': 2014,
+ 'pfr_name': 'SavaTo00',
+ 'player_name': u'Tom Savage',
+ 'position_type': 'qb'}
+2015-10-31 01:50:38 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/S/SancMa00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:38 [dmoz] INFO: Player's name is: Mark Sanchez
+2015-10-31 01:50:38 [dmoz] INFO: Player's pfr_name is: SancMa00
+2015-10-31 01:50:38 [dmoz] INFO: Player's draft year is: 2009
+2015-10-31 01:50:38 [dmoz] INFO: Mark Sanchez has college stats
+2015-10-31 01:50:38 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/S/SancMa00.htm>
+{'draft_year': 2009,
+ 'pfr_name': 'SancMa00',
+ 'player_name': u'Mark Sanchez',
+ 'position_type': 'qb'}
+2015-10-31 01:50:39 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/R/RyanMa00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:39 [dmoz] INFO: Player's name is: Matt Ryan
+2015-10-31 01:50:39 [dmoz] INFO: Player's pfr_name is: RyanMa00
+2015-10-31 01:50:39 [dmoz] INFO: Player's draft year is: 2008
+2015-10-31 01:50:39 [dmoz] INFO: Matt Ryan has college stats
+2015-10-31 01:50:39 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/R/RyanMa00.htm>
+{'draft_year': 2008,
+ 'pfr_name': 'RyanMa00',
+ 'player_name': u'Matt Ryan',
+ 'position_type': 'qb'}
+2015-10-31 01:50:40 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/R/RomoTo00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:40 [dmoz] INFO: Player's name is: Tony Romo
+2015-10-31 01:50:40 [dmoz] INFO: Player's pfr_name is: RomoTo00
+2015-10-31 01:50:40 [dmoz] INFO: Player's draft year is: -1
+2015-10-31 01:50:40 [dmoz] INFO: Tony Romo has no college stats
+2015-10-31 01:50:40 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/R/RomoTo00.htm>
+{'draft_year': -1,
+ 'pfr_name': 'RomoTo00',
+ 'player_name': u'Tony Romo',
+ 'position_type': 'qb'}
+2015-10-31 01:50:41 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/R/RoetBe00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:41 [dmoz] INFO: Player's name is: Ben Roethlisberger
+2015-10-31 01:50:41 [dmoz] INFO: Player's pfr_name is: RoetBe00
+2015-10-31 01:50:41 [dmoz] INFO: Player's draft year is: 2004
+2015-10-31 01:50:41 [dmoz] INFO: Ben Roethlisberger has college stats
+2015-10-31 01:50:41 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/R/RoetBe00.htm>
+{'draft_year': 2004,
+ 'pfr_name': 'RoetBe00',
+ 'player_name': u'Ben Roethlisberger',
+ 'position_type': 'qb'}
+2015-10-31 01:50:42 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/R/RodgAa00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:42 [dmoz] INFO: Player's name is: Aaron Rodgers
+2015-10-31 01:50:42 [dmoz] INFO: Player's pfr_name is: RodgAa00
+2015-10-31 01:50:42 [dmoz] INFO: Player's draft year is: 2005
+2015-10-31 01:50:42 [dmoz] INFO: Aaron Rodgers has college stats
+2015-10-31 01:50:42 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/R/RodgAa00.htm>
+{'draft_year': 2005,
+ 'pfr_name': 'RodgAa00',
+ 'player_name': u'Aaron Rodgers',
+ 'position_type': 'qb'}
+2015-10-31 01:50:43 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/R/RivePh00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:43 [dmoz] INFO: Player's name is: Philip Rivers
+2015-10-31 01:50:43 [dmoz] INFO: Player's pfr_name is: RivePh00
+2015-10-31 01:50:43 [dmoz] INFO: Player's draft year is: 2004
+2015-10-31 01:50:43 [dmoz] INFO: Philip Rivers has college stats
+2015-10-31 01:50:43 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/R/RivePh00.htm>
+{'draft_year': 2004,
+ 'pfr_name': 'RivePh00',
+ 'player_name': u'Philip Rivers',
+ 'position_type': 'qb'}
+2015-10-31 01:50:44 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/R/RenfSe00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:44 [dmoz] INFO: Player's name is: Sean Renfree
+2015-10-31 01:50:44 [dmoz] INFO: Player's pfr_name is: RenfSe00
+2015-10-31 01:50:44 [dmoz] INFO: Player's draft year is: 2013
+2015-10-31 01:50:44 [dmoz] INFO: Sean Renfree has college stats
+2015-10-31 01:50:44 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/R/RenfSe00.htm>
+{'draft_year': 2013,
+ 'pfr_name': 'RenfSe00',
+ 'player_name': u'Sean Renfree',
+ 'position_type': 'qb'}
+2015-10-31 01:50:45 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/Q/QuinBr00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:45 [dmoz] INFO: Player's name is: Brady Quinn
+2015-10-31 01:50:45 [dmoz] INFO: Player's pfr_name is: QuinBr00
+2015-10-31 01:50:45 [dmoz] INFO: Player's draft year is: 2007
+2015-10-31 01:50:45 [dmoz] INFO: Brady Quinn has college stats
+2015-10-31 01:50:45 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/Q/QuinBr00.htm>
+{'draft_year': 2007,
+ 'pfr_name': 'QuinBr00',
+ 'player_name': u'Brady Quinn',
+ 'position_type': 'qb'}
+2015-10-31 01:50:46 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/P/PryoTe00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:46 [dmoz] INFO: Player's name is: Terrelle Pryor
+2015-10-31 01:50:46 [dmoz] INFO: Player's pfr_name is: PryoTe00
+2015-10-31 01:50:46 [dmoz] INFO: Player's draft year is: 2011
+2015-10-31 01:50:46 [dmoz] INFO: Terrelle Pryor has no college stats
+2015-10-31 01:50:46 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/P/PryoTe00.htm>
+{'draft_year': 2011,
+ 'pfr_name': 'PryoTe00',
+ 'player_name': u'Terrelle Pryor',
+ 'position_type': 'qb'}
+2015-10-31 01:50:47 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/P/PondCh00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:47 [dmoz] INFO: Player's name is: Christian Ponder
+2015-10-31 01:50:47 [dmoz] INFO: Player's pfr_name is: PondCh00
+2015-10-31 01:50:47 [dmoz] INFO: Player's draft year is: 2011
+2015-10-31 01:50:47 [dmoz] INFO: Christian Ponder has college stats
+2015-10-31 01:50:47 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/P/PondCh00.htm>
+{'draft_year': 2011,
+ 'pfr_name': 'PondCh00',
+ 'player_name': u'Christian Ponder',
+ 'position_type': 'qb'}
+2015-10-31 01:50:48 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/P/PalmJo20.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:48 [dmoz] INFO: Player's name is: Jordan Palmer
+2015-10-31 01:50:48 [dmoz] INFO: Player's pfr_name is: PalmJo20
+2015-10-31 01:50:48 [dmoz] INFO: Player's draft year is: 2007
+2015-10-31 01:50:48 [dmoz] INFO: Jordan Palmer has college stats
+2015-10-31 01:50:48 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/P/PalmJo20.htm>
+{'draft_year': 2007,
+ 'pfr_name': 'PalmJo20',
+ 'player_name': u'Jordan Palmer',
+ 'position_type': 'qb'}
+2015-10-31 01:50:49 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/P/PalmCa00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:49 [dmoz] INFO: Player's name is: Carson Palmer
+2015-10-31 01:50:49 [dmoz] INFO: Player's pfr_name is: PalmCa00
+2015-10-31 01:50:49 [dmoz] INFO: Player's draft year is: 2003
+2015-10-31 01:50:49 [dmoz] INFO: Carson Palmer has college stats
+2015-10-31 01:50:49 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/P/PalmCa00.htm>
+{'draft_year': 2003,
+ 'pfr_name': 'PalmCa00',
+ 'player_name': u'Carson Palmer',
+ 'position_type': 'qb'}
+2015-10-31 01:50:50 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/P/PainCu00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:50 [dmoz] INFO: Player's name is: Curtis Painter
+2015-10-31 01:50:50 [dmoz] INFO: Player's pfr_name is: PainCu00
+2015-10-31 01:50:50 [dmoz] INFO: Player's draft year is: 2009
+2015-10-31 01:50:50 [dmoz] INFO: Curtis Painter has college stats
+2015-10-31 01:50:50 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/P/PainCu00.htm>
+{'draft_year': 2009,
+ 'pfr_name': 'PainCu00',
+ 'player_name': u'Curtis Painter',
+ 'position_type': 'qb'}
+2015-10-31 01:50:51 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/M/MorrSt00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:51 [dmoz] INFO: Player's name is: Stephen Morris
+2015-10-31 01:50:51 [dmoz] INFO: Player's pfr_name is: MorrSt00
+2015-10-31 01:50:51 [dmoz] INFO: Player's draft year is: -1
+2015-10-31 01:50:51 [dmoz] ERROR: No game logs link for Stephen Morris
+2015-10-31 01:50:51 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/M/MorrSt00.htm>
+{'draft_year': -1,
+ 'pfr_name': 'MorrSt00',
+ 'player_name': u'Stephen Morris',
+ 'position_type': 'qb'}
+2015-10-31 01:50:51 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/O/OsweBr00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:51 [dmoz] INFO: Player's name is: Brock Osweiler
+2015-10-31 01:50:51 [dmoz] INFO: Player's pfr_name is: OsweBr00
+2015-10-31 01:50:51 [dmoz] INFO: Player's draft year is: 2012
+2015-10-31 01:50:51 [dmoz] INFO: Brock Osweiler has college stats
+2015-10-31 01:50:51 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/O/OsweBr00.htm>
+{'draft_year': 2012,
+ 'pfr_name': 'OsweBr00',
+ 'player_name': u'Brock Osweiler',
+ 'position_type': 'qb'}
+2015-10-31 01:50:52 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/O/OrloDa00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:52 [dmoz] INFO: Player's name is: Dan Orlovsky
+2015-10-31 01:50:52 [dmoz] INFO: Player's pfr_name is: OrloDa00
+2015-10-31 01:50:52 [dmoz] INFO: Player's draft year is: 2005
+2015-10-31 01:50:52 [dmoz] INFO: Dan Orlovsky has college stats
+2015-10-31 01:50:52 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/O/OrloDa00.htm>
+{'draft_year': 2005,
+ 'pfr_name': 'OrloDa00',
+ 'player_name': u'Dan Orlovsky',
+ 'position_type': 'qb'}
+2015-10-31 01:50:53 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/N/NewtCa00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:53 [dmoz] INFO: Player's name is: Cam Newton
+2015-10-31 01:50:53 [dmoz] INFO: Player's pfr_name is: NewtCa00
+2015-10-31 01:50:53 [dmoz] INFO: Player's draft year is: 2011
+2015-10-31 01:50:53 [dmoz] INFO: Cam Newton has college stats
+2015-10-31 01:50:53 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/N/NewtCa00.htm>
+{'draft_year': 2011,
+ 'pfr_name': 'NewtCa00',
+ 'player_name': u'Cam Newton',
+ 'position_type': 'qb'}
+2015-10-31 01:50:54 [scrapy] INFO: Crawled 61 pages (at 61 pages/min), scraped 60 items (at 60 items/min)
+2015-10-31 01:50:54 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/N/NassRy00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:54 [dmoz] INFO: Player's name is: Ryan Nassib
+2015-10-31 01:50:54 [dmoz] INFO: Player's pfr_name is: NassRy00
+2015-10-31 01:50:54 [dmoz] INFO: Player's draft year is: 2013
+2015-10-31 01:50:54 [dmoz] INFO: Ryan Nassib has college stats
+2015-10-31 01:50:54 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/N/NassRy00.htm>
+{'draft_year': 2013,
+ 'pfr_name': 'NassRy00',
+ 'player_name': u'Ryan Nassib',
+ 'position_type': 'qb'}
+2015-10-31 01:50:55 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/M/MurrAa00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:55 [dmoz] INFO: Player's name is: Aaron Murray
+2015-10-31 01:50:55 [dmoz] INFO: Player's pfr_name is: MurrAa00
+2015-10-31 01:50:55 [dmoz] INFO: Player's draft year is: 2014
+2015-10-31 01:50:55 [dmoz] ERROR: No game logs link for Aaron Murray
+2015-10-31 01:50:55 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/M/MurrAa00.htm>
+{'draft_year': 2014,
+ 'pfr_name': 'MurrAa00',
+ 'player_name': u'Aaron Murray',
+ 'position_type': 'qb'}
+2015-10-31 01:50:56 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/M/MoorMa01.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:56 [dmoz] INFO: Player's name is: Matt Moore
+2015-10-31 01:50:56 [dmoz] INFO: Player's pfr_name is: MoorMa01
+2015-10-31 01:50:56 [dmoz] INFO: Player's draft year is: -1
+2015-10-31 01:50:56 [dmoz] INFO: Matt Moore has college stats
+2015-10-31 01:50:56 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/M/MoorMa01.htm>
+{'draft_year': -1,
+ 'pfr_name': 'MoorMa01',
+ 'player_name': u'Matt Moore',
+ 'position_type': 'qb'}
+2015-10-31 01:50:57 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/M/MoorKe02.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:57 [dmoz] INFO: Player's name is: Kellen Moore
+2015-10-31 01:50:57 [dmoz] INFO: Player's pfr_name is: MoorKe02
+2015-10-31 01:50:57 [dmoz] INFO: Player's draft year is: -1
+2015-10-31 01:50:57 [dmoz] ERROR: No game logs link for Kellen Moore
+2015-10-31 01:50:57 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/M/MoorKe02.htm>
+{'draft_year': -1,
+ 'pfr_name': 'MoorKe02',
+ 'player_name': u'Kellen Moore',
+ 'position_type': 'qb'}
+2015-10-31 01:50:58 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/M/MettZa00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:58 [dmoz] INFO: Player's name is: Zach Mettenberger
+2015-10-31 01:50:58 [dmoz] INFO: Player's pfr_name is: MettZa00
+2015-10-31 01:50:58 [dmoz] INFO: Player's draft year is: 2014
+2015-10-31 01:50:58 [dmoz] INFO: Zach Mettenberger has college stats
+2015-10-31 01:50:58 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/M/MettZa00.htm>
+{'draft_year': 2014,
+ 'pfr_name': 'MettZa00',
+ 'player_name': u'Zach Mettenberger',
+ 'position_type': 'qb'}
+2015-10-31 01:50:59 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/M/McGlMa01.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:50:59 [dmoz] INFO: Player's name is: Matt McGloin
+2015-10-31 01:50:59 [dmoz] INFO: Player's pfr_name is: McGlMa01
+2015-10-31 01:50:59 [dmoz] INFO: Player's draft year is: -1
+2015-10-31 01:50:59 [dmoz] INFO: Matt McGloin has college stats
+2015-10-31 01:50:59 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/M/McGlMa01.htm>
+{'draft_year': -1,
+ 'pfr_name': 'McGlMa01',
+ 'player_name': u'Matt McGloin',
+ 'position_type': 'qb'}
+2015-10-31 01:51:00 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/M/ManzJo00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:51:00 [dmoz] INFO: Player's name is: Johnny Manziel
+2015-10-31 01:51:00 [dmoz] INFO: Player's pfr_name is: ManzJo00
+2015-10-31 01:51:00 [dmoz] INFO: Player's draft year is: 2014
+2015-10-31 01:51:00 [dmoz] INFO: Johnny Manziel has college stats
+2015-10-31 01:51:00 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/M/ManzJo00.htm>
+{'draft_year': 2014,
+ 'pfr_name': 'ManzJo00',
+ 'player_name': u'Johnny Manziel',
+ 'position_type': 'qb'}
+2015-10-31 01:51:00 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/M/McCoCo00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:51:00 [dmoz] INFO: Player's name is: Colt McCoy
+2015-10-31 01:51:00 [dmoz] INFO: Player's pfr_name is: McCoCo00
+2015-10-31 01:51:00 [dmoz] INFO: Player's draft year is: 2010
+2015-10-31 01:51:00 [dmoz] INFO: Colt McCoy has college stats
+2015-10-31 01:51:00 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/M/McCoCo00.htm>
+{'draft_year': 2010,
+ 'pfr_name': 'McCoCo00',
+ 'player_name': u'Colt McCoy',
+ 'position_type': 'qb'}
+2015-10-31 01:51:01 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/M/McCoLu00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:51:01 [dmoz] INFO: Player's name is: Luke McCown
+2015-10-31 01:51:01 [dmoz] INFO: Player's pfr_name is: McCoLu00
+2015-10-31 01:51:01 [dmoz] INFO: Player's draft year is: 2004
+2015-10-31 01:51:01 [dmoz] INFO: Luke McCown has college stats
+2015-10-31 01:51:01 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/M/McCoLu00.htm>
+{'draft_year': 2004,
+ 'pfr_name': 'McCoLu00',
+ 'player_name': u'Luke McCown',
+ 'position_type': 'qb'}
+2015-10-31 01:51:02 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/M/McCoJo01.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:51:02 [dmoz] INFO: Player's name is: Josh McCown
+2015-10-31 01:51:02 [dmoz] INFO: Player's pfr_name is: McCoJo01
+2015-10-31 01:51:02 [dmoz] INFO: Player's draft year is: 2002
+2015-10-31 01:51:02 [dmoz] INFO: Josh McCown has college stats
+2015-10-31 01:51:02 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/M/McCoJo01.htm>
+{'draft_year': 2002,
+ 'pfr_name': 'McCoJo01',
+ 'player_name': u'Josh McCown',
+ 'position_type': 'qb'}
+2015-10-31 01:51:03 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/M/McCaA.00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:51:03 [dmoz] INFO: Player's name is: A.J. McCarron
+2015-10-31 01:51:03 [dmoz] INFO: Player's pfr_name is: McCaA.00
+2015-10-31 01:51:03 [dmoz] INFO: Player's draft year is: 2014
+2015-10-31 01:51:03 [dmoz] ERROR: No game logs link for A.J. McCarron
+2015-10-31 01:51:03 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/M/McCaA.00.htm>
+{'draft_year': 2014,
+ 'pfr_name': 'McCaA.00',
+ 'player_name': u'A.J. McCarron',
+ 'position_type': 'qb'}
+2015-10-31 01:51:04 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/M/MariMa01.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:51:04 [dmoz] INFO: Player's name is: Marcus Mariota
+2015-10-31 01:51:04 [dmoz] INFO: Player's pfr_name is: MariMa01
+2015-10-31 01:51:04 [dmoz] INFO: Player's draft year is: 2015
+2015-10-31 01:51:04 [dmoz] INFO: Marcus Mariota has college stats
+2015-10-31 01:51:04 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/M/MariMa01.htm>
+{'draft_year': 2015,
+ 'pfr_name': 'MariMa01',
+ 'player_name': u'Marcus Mariota',
+ 'position_type': 'qb'}
+2015-10-31 01:51:05 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/M/ManuEJ00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:51:05 [dmoz] INFO: Player's name is: EJ Manuel
+2015-10-31 01:51:05 [dmoz] INFO: Player's pfr_name is: ManuEJ00
+2015-10-31 01:51:05 [dmoz] INFO: Player's draft year is: 2013
+2015-10-31 01:51:05 [dmoz] INFO: EJ Manuel has college stats
+2015-10-31 01:51:05 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/M/ManuEJ00.htm>
+{'draft_year': 2013,
+ 'pfr_name': 'ManuEJ00',
+ 'player_name': u'EJ Manuel',
+ 'position_type': 'qb'}
+2015-10-31 01:51:06 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/M/MannPe00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:51:06 [dmoz] INFO: Player's name is: Peyton Manning
+2015-10-31 01:51:06 [dmoz] INFO: Player's pfr_name is: MannPe00
+2015-10-31 01:51:06 [dmoz] INFO: Player's draft year is: 1998
+2015-10-31 01:51:06 [dmoz] INFO: Peyton Manning has college stats
+2015-10-31 01:51:06 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/M/MannPe00.htm>
+{'draft_year': 1998,
+ 'pfr_name': 'MannPe00',
+ 'player_name': u'Peyton Manning',
+ 'position_type': 'qb'}
+2015-10-31 01:51:07 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/M/MannEl00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:51:07 [dmoz] INFO: Player's name is: Eli Manning
+2015-10-31 01:51:07 [dmoz] INFO: Player's pfr_name is: MannEl00
+2015-10-31 01:51:07 [dmoz] INFO: Player's draft year is: 2004
+2015-10-31 01:51:07 [dmoz] INFO: Eli Manning has college stats
+2015-10-31 01:51:07 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/M/MannEl00.htm>
+{'draft_year': 2004,
+ 'pfr_name': 'MannEl00',
+ 'player_name': u'Eli Manning',
+ 'position_type': 'qb'}
+2015-10-31 01:51:08 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/M/MallRy00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:51:08 [dmoz] INFO: Player's name is: Ryan Mallett
+2015-10-31 01:51:08 [dmoz] INFO: Player's pfr_name is: MallRy00
+2015-10-31 01:51:08 [dmoz] INFO: Player's draft year is: 2011
+2015-10-31 01:51:08 [dmoz] INFO: Ryan Mallett has college stats
+2015-10-31 01:51:08 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/M/MallRy00.htm>
+{'draft_year': 2011,
+ 'pfr_name': 'MallRy00',
+ 'player_name': u'Ryan Mallett',
+ 'position_type': 'qb'}
+2015-10-31 01:51:09 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/K/KeenCa00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:51:09 [dmoz] INFO: Player's name is: Case Keenum
+2015-10-31 01:51:09 [dmoz] INFO: Player's pfr_name is: KeenCa00
+2015-10-31 01:51:09 [dmoz] INFO: Player's draft year is: -1
+2015-10-31 01:51:09 [dmoz] INFO: Case Keenum has college stats
+2015-10-31 01:51:09 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/K/KeenCa00.htm>
+{'draft_year': -1,
+ 'pfr_name': 'KeenCa00',
+ 'player_name': u'Case Keenum',
+ 'position_type': 'qb'}
+2015-10-31 01:51:09 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/L/LuckAn00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:51:09 [dmoz] INFO: Player's name is: Andrew Luck
+2015-10-31 01:51:09 [dmoz] INFO: Player's pfr_name is: LuckAn00
+2015-10-31 01:51:09 [dmoz] INFO: Player's draft year is: 2012
+2015-10-31 01:51:09 [dmoz] INFO: Andrew Luck has college stats
+2015-10-31 01:51:09 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/L/LuckAn00.htm>
+{'draft_year': 2012,
+ 'pfr_name': 'LuckAn00',
+ 'player_name': u'Andrew Luck',
+ 'position_type': 'qb'}
+2015-10-31 01:51:10 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/L/LobaSe00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:51:10 [dmoz] INFO: Player's name is: Seth Lobato
+2015-10-31 01:51:10 [dmoz] INFO: Player's pfr_name is: LobaSe00
+2015-10-31 01:51:10 [dmoz] INFO: Player's draft year is: -1
+2015-10-31 01:51:10 [dmoz] ERROR: No game logs link for Seth Lobato
+2015-10-31 01:51:10 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/L/LobaSe00.htm>
+{'draft_year': -1,
+ 'pfr_name': 'LobaSe00',
+ 'player_name': u'Seth Lobato',
+ 'position_type': 'qb'}
+2015-10-31 01:51:11 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/L/LindRy00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:51:11 [dmoz] INFO: Player's name is: Ryan Lindley
+2015-10-31 01:51:11 [dmoz] INFO: Player's pfr_name is: LindRy00
+2015-10-31 01:51:11 [dmoz] INFO: Player's draft year is: 2012
+2015-10-31 01:51:11 [dmoz] INFO: Ryan Lindley has college stats
+2015-10-31 01:51:11 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/L/LindRy00.htm>
+{'draft_year': 2012,
+ 'pfr_name': 'LindRy00',
+ 'player_name': u'Ryan Lindley',
+ 'position_type': 'qb'}
+2015-10-31 01:51:12 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/L/LewiTh01.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:51:12 [dmoz] INFO: Player's name is: Thaddeus Lewis
+2015-10-31 01:51:12 [dmoz] INFO: Player's pfr_name is: LewiTh01
+2015-10-31 01:51:12 [dmoz] INFO: Player's draft year is: -1
+2015-10-31 01:51:12 [dmoz] INFO: Thaddeus Lewis has college stats
+2015-10-31 01:51:12 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/L/LewiTh01.htm>
+{'draft_year': -1,
+ 'pfr_name': 'LewiTh01',
+ 'player_name': u'Thaddeus Lewis',
+ 'position_type': 'qb'}
+2015-10-31 01:51:13 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/K/KinnG.00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:51:13 [dmoz] INFO: Player's name is: G.J. Kinne
+2015-10-31 01:51:13 [dmoz] INFO: Player's pfr_name is: KinnG.00
+2015-10-31 01:51:13 [dmoz] INFO: Player's draft year is: -1
+2015-10-31 01:51:13 [dmoz] ERROR: No game logs link for G.J. Kinne
+2015-10-31 01:51:13 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/K/KinnG.00.htm>
+{'draft_year': -1,
+ 'pfr_name': 'KinnG.00',
+ 'player_name': u'G.J. Kinne',
+ 'position_type': 'qb'}
+2015-10-31 01:51:14 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/K/KafkMi00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:51:14 [dmoz] INFO: Player's name is: Mike Kafka
+2015-10-31 01:51:14 [dmoz] INFO: Player's pfr_name is: KafkMi00
+2015-10-31 01:51:14 [dmoz] INFO: Player's draft year is: 2010
+2015-10-31 01:51:14 [dmoz] INFO: Mike Kafka has college stats
+2015-10-31 01:51:14 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/K/KafkMi00.htm>
+{'draft_year': 2010,
+ 'pfr_name': 'KafkMi00',
+ 'player_name': u'Mike Kafka',
+ 'position_type': 'qb'}
+2015-10-31 01:51:15 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/K/KaepCo00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:51:15 [dmoz] INFO: Player's name is: Colin Kaepernick
+2015-10-31 01:51:15 [dmoz] INFO: Player's pfr_name is: KaepCo00
+2015-10-31 01:51:15 [dmoz] INFO: Player's draft year is: 2011
+2015-10-31 01:51:15 [dmoz] INFO: Colin Kaepernick has college stats
+2015-10-31 01:51:15 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/K/KaepCo00.htm>
+{'draft_year': 2011,
+ 'pfr_name': 'KaepCo00',
+ 'player_name': u'Colin Kaepernick',
+ 'position_type': 'qb'}
+2015-10-31 01:51:16 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/H/HennCh01.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:51:16 [dmoz] INFO: Player's name is: Chad Henne
+2015-10-31 01:51:16 [dmoz] INFO: Player's pfr_name is: HennCh01
+2015-10-31 01:51:16 [dmoz] INFO: Player's draft year is: 2008
+2015-10-31 01:51:16 [dmoz] INFO: Chad Henne has college stats
+2015-10-31 01:51:16 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/H/HennCh01.htm>
+{'draft_year': 2008,
+ 'pfr_name': 'HennCh01',
+ 'player_name': u'Chad Henne',
+ 'position_type': 'qb'}
+2015-10-31 01:51:16 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/J/JoneLa02.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:51:16 [dmoz] INFO: Player's name is: Landry Jones
+2015-10-31 01:51:16 [dmoz] INFO: Player's pfr_name is: JoneLa02
+2015-10-31 01:51:16 [dmoz] INFO: Player's draft year is: 2013
+2015-10-31 01:51:16 [dmoz] INFO: Landry Jones has college stats
+2015-10-31 01:51:16 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/J/JoneLa02.htm>
+{'draft_year': 2013,
+ 'pfr_name': 'JoneLa02',
+ 'player_name': u'Landry Jones',
+ 'position_type': 'qb'}
+2015-10-31 01:51:17 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/J/JohnJo05.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:51:17 [dmoz] INFO: Player's name is: Josh Johnson
+2015-10-31 01:51:17 [dmoz] INFO: Player's pfr_name is: JohnJo05
+2015-10-31 01:51:17 [dmoz] INFO: Player's draft year is: 2008
+2015-10-31 01:51:17 [dmoz] INFO: Josh Johnson has no college stats
+2015-10-31 01:51:17 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/J/JohnJo05.htm>
+{'draft_year': 2008,
+ 'pfr_name': 'JohnJo05',
+ 'player_name': u'Josh Johnson',
+ 'position_type': 'qb'}
+2015-10-31 01:51:18 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/J/JackTa00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:51:18 [dmoz] INFO: Player's name is: Tarvaris Jackson
+2015-10-31 01:51:18 [dmoz] INFO: Player's pfr_name is: JackTa00
+2015-10-31 01:51:18 [dmoz] INFO: Player's draft year is: 2006
+2015-10-31 01:51:18 [dmoz] INFO: Tarvaris Jackson has college stats
+2015-10-31 01:51:18 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/J/JackTa00.htm>
+{'draft_year': 2006,
+ 'pfr_name': 'JackTa00',
+ 'player_name': u'Tarvaris Jackson',
+ 'position_type': 'qb'}
+2015-10-31 01:51:19 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/H/HoyeBr00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:51:19 [dmoz] INFO: Player's name is: Brian Hoyer
+2015-10-31 01:51:19 [dmoz] INFO: Player's pfr_name is: HoyeBr00
+2015-10-31 01:51:19 [dmoz] INFO: Player's draft year is: -1
+2015-10-31 01:51:19 [dmoz] INFO: Brian Hoyer has college stats
+2015-10-31 01:51:19 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/H/HoyeBr00.htm>
+{'draft_year': -1,
+ 'pfr_name': 'HoyeBr00',
+ 'player_name': u'Brian Hoyer',
+ 'position_type': 'qb'}
+2015-10-31 01:51:20 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/H/HillSh00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:51:20 [dmoz] INFO: Player's name is: Shaun Hill
+2015-10-31 01:51:20 [dmoz] INFO: Player's pfr_name is: HillSh00
+2015-10-31 01:51:20 [dmoz] INFO: Player's draft year is: -1
+2015-10-31 01:51:20 [dmoz] INFO: Shaun Hill has college stats
+2015-10-31 01:51:20 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/H/HillSh00.htm>
+{'draft_year': -1,
+ 'pfr_name': 'HillSh00',
+ 'player_name': u'Shaun Hill',
+ 'position_type': 'qb'}
+2015-10-31 01:51:21 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/H/HassMa00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:51:21 [dmoz] INFO: Player's name is: Matt Hasselbeck
+2015-10-31 01:51:21 [dmoz] INFO: Player's pfr_name is: HassMa00
+2015-10-31 01:51:21 [dmoz] INFO: Player's draft year is: 1998
+2015-10-31 01:51:21 [dmoz] INFO: Matt Hasselbeck has college stats
+2015-10-31 01:51:21 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/H/HassMa00.htm>
+{'draft_year': 1998,
+ 'pfr_name': 'HassMa00',
+ 'player_name': u'Matt Hasselbeck',
+ 'position_type': 'qb'}
+2015-10-31 01:51:22 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/H/HarnCh00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:51:22 [dmoz] INFO: Player's name is: Chandler Harnish
+2015-10-31 01:51:22 [dmoz] INFO: Player's pfr_name is: HarnCh00
+2015-10-31 01:51:22 [dmoz] INFO: Player's draft year is: 2012
+2015-10-31 01:51:22 [dmoz] ERROR: No game logs link for Chandler Harnish
+2015-10-31 01:51:22 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/H/HarnCh00.htm>
+{'draft_year': 2012,
+ 'pfr_name': 'HarnCh00',
+ 'player_name': u'Chandler Harnish',
+ 'position_type': 'qb'}
+2015-10-31 01:51:23 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/G/GlenMi00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:51:23 [dmoz] INFO: Player's name is: Mike Glennon
+2015-10-31 01:51:23 [dmoz] INFO: Player's pfr_name is: GlenMi00
+2015-10-31 01:51:23 [dmoz] INFO: Player's draft year is: 2013
+2015-10-31 01:51:23 [dmoz] INFO: Mike Glennon has college stats
+2015-10-31 01:51:23 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/G/GlenMi00.htm>
+{'draft_year': 2013,
+ 'pfr_name': 'GlenMi00',
+ 'player_name': u'Mike Glennon',
+ 'position_type': 'qb'}
+2015-10-31 01:51:23 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/H/HaniCa00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:51:23 [dmoz] INFO: Player's name is: Caleb Hanie
+2015-10-31 01:51:23 [dmoz] INFO: Player's pfr_name is: HaniCa00
+2015-10-31 01:51:23 [dmoz] INFO: Player's draft year is: -1
+2015-10-31 01:51:23 [dmoz] INFO: Caleb Hanie has college stats
+2015-10-31 01:51:23 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/H/HaniCa00.htm>
+{'draft_year': -1,
+ 'pfr_name': 'HaniCa00',
+ 'player_name': u'Caleb Hanie',
+ 'position_type': 'qb'}
+2015-10-31 01:51:24 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/G/GrosRe00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:51:24 [dmoz] INFO: Player's name is: Rex Grossman
+2015-10-31 01:51:24 [dmoz] INFO: Player's pfr_name is: GrosRe00
+2015-10-31 01:51:24 [dmoz] INFO: Player's draft year is: 2003
+2015-10-31 01:51:24 [dmoz] INFO: Rex Grossman has college stats
+2015-10-31 01:51:24 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/G/GrosRe00.htm>
+{'draft_year': 2003,
+ 'pfr_name': 'GrosRe00',
+ 'player_name': u'Rex Grossman',
+ 'position_type': 'qb'}
+2015-10-31 01:51:25 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/G/GrifRy01.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:51:25 [dmoz] INFO: Player's name is: Ryan Griffin
+2015-10-31 01:51:25 [dmoz] INFO: Player's pfr_name is: GrifRy01
+2015-10-31 01:51:25 [dmoz] INFO: Player's draft year is: -1
+2015-10-31 01:51:25 [dmoz] ERROR: No game logs link for Ryan Griffin
+2015-10-31 01:51:25 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/G/GrifRy01.htm>
+{'draft_year': -1,
+ 'pfr_name': 'GrifRy01',
+ 'player_name': u'Ryan Griffin',
+ 'position_type': 'qb'}
+2015-10-31 01:51:26 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/G/GrifRo01.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:51:26 [dmoz] INFO: Player's name is: Robert Griffin
+2015-10-31 01:51:26 [dmoz] INFO: Player's pfr_name is: GrifRo01
+2015-10-31 01:51:26 [dmoz] INFO: Player's draft year is: 2012
+2015-10-31 01:51:26 [dmoz] INFO: Robert Griffin has college stats
+2015-10-31 01:51:26 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/G/GrifRo01.htm>
+{'draft_year': 2012,
+ 'pfr_name': 'GrifRo01',
+ 'player_name': u'Robert Griffin',
+ 'position_type': 'qb'}
+2015-10-31 01:51:27 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/G/GradBr00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:51:27 [dmoz] INFO: Player's name is: Bruce Gradkowski
+2015-10-31 01:51:27 [dmoz] INFO: Player's pfr_name is: GradBr00
+2015-10-31 01:51:27 [dmoz] INFO: Player's draft year is: 2006
+2015-10-31 01:51:27 [dmoz] INFO: Bruce Gradkowski has college stats
+2015-10-31 01:51:27 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/G/GradBr00.htm>
+{'draft_year': 2006,
+ 'pfr_name': 'GradBr00',
+ 'player_name': u'Bruce Gradkowski',
+ 'position_type': 'qb'}
+2015-10-31 01:51:28 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/G/GilbGa01.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:51:28 [dmoz] INFO: Player's name is: Garrett Gilbert
+2015-10-31 01:51:28 [dmoz] INFO: Player's pfr_name is: GilbGa01
+2015-10-31 01:51:28 [dmoz] INFO: Player's draft year is: 2014
+2015-10-31 01:51:28 [dmoz] ERROR: No game logs link for Garrett Gilbert
+2015-10-31 01:51:28 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/G/GilbGa01.htm>
+{'draft_year': 2014,
+ 'pfr_name': 'GilbGa01',
+ 'player_name': u'Garrett Gilbert',
+ 'position_type': 'qb'}
+2015-10-31 01:51:29 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/G/GaroJi00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:51:29 [dmoz] INFO: Player's name is: Jimmy Garoppolo
+2015-10-31 01:51:29 [dmoz] INFO: Player's pfr_name is: GaroJi00
+2015-10-31 01:51:29 [dmoz] INFO: Player's draft year is: 2014
+2015-10-31 01:51:29 [dmoz] INFO: Jimmy Garoppolo has no college stats
+2015-10-31 01:51:29 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/G/GaroJi00.htm>
+{'draft_year': 2014,
+ 'pfr_name': 'GaroJi00',
+ 'player_name': u'Jimmy Garoppolo',
+ 'position_type': 'qb'}
+2015-10-31 01:51:30 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/G/GabbBl00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:51:30 [dmoz] INFO: Player's name is: Blaine Gabbert
+2015-10-31 01:51:30 [dmoz] INFO: Player's pfr_name is: GabbBl00
+2015-10-31 01:51:30 [dmoz] INFO: Player's draft year is: 2011
+2015-10-31 01:51:30 [dmoz] INFO: Blaine Gabbert has college stats
+2015-10-31 01:51:30 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/G/GabbBl00.htm>
+{'draft_year': 2011,
+ 'pfr_name': 'GabbBl00',
+ 'player_name': u'Blaine Gabbert',
+ 'position_type': 'qb'}
+2015-10-31 01:51:31 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/F/FoleNi00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:51:31 [dmoz] INFO: Player's name is: Nick Foles
+2015-10-31 01:51:31 [dmoz] INFO: Player's pfr_name is: FoleNi00
+2015-10-31 01:51:31 [dmoz] INFO: Player's draft year is: 2012
+2015-10-31 01:51:31 [dmoz] INFO: Nick Foles has college stats
+2015-10-31 01:51:31 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/F/FoleNi00.htm>
+{'draft_year': 2012,
+ 'pfr_name': 'FoleNi00',
+ 'player_name': u'Nick Foles',
+ 'position_type': 'qb'}
+2015-10-31 01:51:32 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/E/EdwaAr00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:51:32 [dmoz] INFO: Player's name is: Armanti Edwards
+2015-10-31 01:51:32 [dmoz] INFO: Player's pfr_name is: EdwaAr00
+2015-10-31 01:51:32 [dmoz] INFO: Player's draft year is: 2010
+2015-10-31 01:51:32 [dmoz] INFO: Armanti Edwards has no college stats
+2015-10-31 01:51:32 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/E/EdwaAr00.htm>
+{'draft_year': 2010,
+ 'pfr_name': 'EdwaAr00',
+ 'player_name': u'Armanti Edwards',
+ 'position_type': 'qb'}
+2015-10-31 01:51:32 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/F/FlynMa00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:51:32 [dmoz] INFO: Player's name is: Matt Flynn
+2015-10-31 01:51:32 [dmoz] INFO: Player's pfr_name is: FlynMa00
+2015-10-31 01:51:32 [dmoz] INFO: Player's draft year is: 2008
+2015-10-31 01:51:32 [dmoz] INFO: Matt Flynn has college stats
+2015-10-31 01:51:32 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/F/FlynMa00.htm>
+{'draft_year': 2008,
+ 'pfr_name': 'FlynMa00',
+ 'player_name': u'Matt Flynn',
+ 'position_type': 'qb'}
+2015-10-31 01:51:33 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/F/FlacJo00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:51:33 [dmoz] INFO: Player's name is: Joe Flacco
+2015-10-31 01:51:33 [dmoz] INFO: Player's pfr_name is: FlacJo00
+2015-10-31 01:51:33 [dmoz] INFO: Player's draft year is: 2008
+2015-10-31 01:51:33 [dmoz] INFO: Joe Flacco has college stats
+2015-10-31 01:51:33 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/F/FlacJo00.htm>
+{'draft_year': 2008,
+ 'pfr_name': 'FlacJo00',
+ 'player_name': u'Joe Flacco',
+ 'position_type': 'qb'}
+2015-10-31 01:51:34 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/B/BrayTy00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:51:34 [dmoz] INFO: Player's name is: Tyler Bray
+2015-10-31 01:51:34 [dmoz] INFO: Player's pfr_name is: BrayTy00
+2015-10-31 01:51:34 [dmoz] INFO: Player's draft year is: -1
+2015-10-31 01:51:34 [dmoz] ERROR: No game logs link for Tyler Bray
+2015-10-31 01:51:34 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/B/BrayTy00.htm>
+{'draft_year': -1,
+ 'pfr_name': 'BrayTy00',
+ 'player_name': u'Tyler Bray',
+ 'position_type': 'qb'}
+2015-10-31 01:51:34 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/F/FitzRy00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:51:34 [dmoz] INFO: Player's name is: Ryan Fitzpatrick
+2015-10-31 01:51:34 [dmoz] INFO: Player's pfr_name is: FitzRy00
+2015-10-31 01:51:34 [dmoz] INFO: Player's draft year is: 2005
+2015-10-31 01:51:34 [dmoz] INFO: Ryan Fitzpatrick has no college stats
+2015-10-31 01:51:34 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/F/FitzRy00.htm>
+{'draft_year': 2005,
+ 'pfr_name': 'FitzRy00',
+ 'player_name': u'Ryan Fitzpatrick',
+ 'position_type': 'qb'}
+2015-10-31 01:51:35 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/F/FaleDa00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:51:35 [dmoz] INFO: Player's name is: David Fales
+2015-10-31 01:51:35 [dmoz] INFO: Player's pfr_name is: FaleDa00
+2015-10-31 01:51:35 [dmoz] INFO: Player's draft year is: 2014
+2015-10-31 01:51:35 [dmoz] ERROR: No game logs link for David Fales
+2015-10-31 01:51:35 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/F/FaleDa00.htm>
+{'draft_year': 2014,
+ 'pfr_name': 'FaleDa00',
+ 'player_name': u'David Fales',
+ 'position_type': 'qb'}
+2015-10-31 01:51:36 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/E/EdwaTr01.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:51:36 [dmoz] INFO: Player's name is: Trent Edwards
+2015-10-31 01:51:36 [dmoz] INFO: Player's pfr_name is: EdwaTr01
+2015-10-31 01:51:36 [dmoz] INFO: Player's draft year is: 2007
+2015-10-31 01:51:36 [dmoz] INFO: Trent Edwards has college stats
+2015-10-31 01:51:36 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/E/EdwaTr01.htm>
+{'draft_year': 2007,
+ 'pfr_name': 'EdwaTr01',
+ 'player_name': u'Trent Edwards',
+ 'position_type': 'qb'}
+2015-10-31 01:51:37 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/D/DyseZa00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:51:37 [dmoz] INFO: Player's name is: Zac Dysert
+2015-10-31 01:51:37 [dmoz] INFO: Player's pfr_name is: DyseZa00
+2015-10-31 01:51:37 [dmoz] INFO: Player's draft year is: 2013
+2015-10-31 01:51:37 [dmoz] ERROR: No game logs link for Zac Dysert
+2015-10-31 01:51:37 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/D/DyseZa00.htm>
+{'draft_year': 2013,
+ 'pfr_name': 'DyseZa00',
+ 'player_name': u'Zac Dysert',
+ 'position_type': 'qb'}
+2015-10-31 01:51:38 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/D/DixoDe00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:51:38 [dmoz] INFO: Player's name is: Dennis Dixon
+2015-10-31 01:51:38 [dmoz] INFO: Player's pfr_name is: DixoDe00
+2015-10-31 01:51:38 [dmoz] INFO: Player's draft year is: 2008
+2015-10-31 01:51:38 [dmoz] INFO: Dennis Dixon has college stats
+2015-10-31 01:51:38 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/D/DixoDe00.htm>
+{'draft_year': 2008,
+ 'pfr_name': 'DixoDe00',
+ 'player_name': u'Dennis Dixon',
+ 'position_type': 'qb'}
+2015-10-31 01:51:39 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/B/BradTo00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:51:39 [dmoz] INFO: Player's name is: Tom Brady
+2015-10-31 01:51:39 [dmoz] INFO: Player's pfr_name is: BradTo00
+2015-10-31 01:51:39 [dmoz] INFO: Player's draft year is: 2000
+2015-10-31 01:51:39 [dmoz] INFO: Tom Brady has college stats
+2015-10-31 01:51:39 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/B/BradTo00.htm>
+{'draft_year': 2000,
+ 'pfr_name': 'BradTo00',
+ 'player_name': u'Tom Brady',
+ 'position_type': 'qb'}
+2015-10-31 01:51:40 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/B/BradSa00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:51:40 [dmoz] INFO: Player's name is: Sam Bradford
+2015-10-31 01:51:40 [dmoz] INFO: Player's pfr_name is: BradSa00
+2015-10-31 01:51:40 [dmoz] INFO: Player's draft year is: 2010
+2015-10-31 01:51:40 [dmoz] INFO: Sam Bradford has college stats
+2015-10-31 01:51:40 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/B/BradSa00.htm>
+{'draft_year': 2010,
+ 'pfr_name': 'BradSa00',
+ 'player_name': u'Sam Bradford',
+ 'position_type': 'qb'}
+2015-10-31 01:51:41 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/B/BortBl00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:51:41 [dmoz] INFO: Player's name is: Blake Bortles
+2015-10-31 01:51:41 [dmoz] INFO: Player's pfr_name is: BortBl00
+2015-10-31 01:51:41 [dmoz] INFO: Player's draft year is: 2014
+2015-10-31 01:51:41 [dmoz] INFO: Blake Bortles has college stats
+2015-10-31 01:51:41 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/B/BortBl00.htm>
+{'draft_year': 2014,
+ 'pfr_name': 'BortBl00',
+ 'player_name': u'Blake Bortles',
+ 'position_type': 'qb'}
+2015-10-31 01:51:42 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/B/BlanMa00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:51:42 [dmoz] INFO: Player's name is: Matt Blanchard
+2015-10-31 01:51:42 [dmoz] INFO: Player's pfr_name is: BlanMa00
+2015-10-31 01:51:42 [dmoz] INFO: Player's draft year is: -1
+2015-10-31 01:51:42 [dmoz] ERROR: No game logs link for Matt Blanchard
+2015-10-31 01:51:42 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/B/BlanMa00.htm>
+{'draft_year': -1,
+ 'pfr_name': 'BlanMa00',
+ 'player_name': u'Matt Blanchard',
+ 'position_type': 'qb'}
+2015-10-31 01:51:43 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/B/BethMc00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:51:43 [dmoz] INFO: Player's name is: McLeod Bethel-Thompson
+2015-10-31 01:51:43 [dmoz] INFO: Player's pfr_name is: BethMc00
+2015-10-31 01:51:43 [dmoz] INFO: Player's draft year is: -1
+2015-10-31 01:51:43 [dmoz] ERROR: No game logs link for McLeod Bethel-Thompson
+2015-10-31 01:51:43 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/B/BethMc00.htm>
+{'draft_year': -1,
+ 'pfr_name': 'BethMc00',
+ 'player_name': u'McLeod Bethel-Thompson',
+ 'position_type': 'qb'}
+2015-10-31 01:51:44 [scrapy] DEBUG: Crawled (200) <GET http://www.pro-football-reference.com/players/B/BarkMa00.htm> (referer: http://www.pro-football-reference.com/players/qbindex.htm)
+2015-10-31 01:51:44 [dmoz] INFO: Player's name is: Matt Barkley
+2015-10-31 01:51:44 [dmoz] INFO: Player's pfr_name is: BarkMa00
+2015-10-31 01:51:44 [dmoz] INFO: Player's draft year is: 2013
+2015-10-31 01:51:44 [dmoz] INFO: Matt Barkley has college stats
+2015-10-31 01:51:44 [scrapy] DEBUG: Scraped from <200 http://www.pro-football-reference.com/players/B/BarkMa00.htm>
+{'draft_year': 2013,
+ 'pfr_name': 'BarkMa00',
+ 'player_name': u'Matt Barkley',
+ 'position_type': 'qb'}
+2015-10-31 01:51:44 [scrapy] INFO: Closing spider (finished)
+2015-10-31 01:51:44 [scrapy] INFO: Stored json feed (117 items) in: active_qbs.json
+2015-10-31 01:51:44 [scrapy] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 37453,
+ 'downloader/request_count': 118,
+ 'downloader/request_method_count/GET': 118,
+ 'downloader/response_bytes': 2462807,
+ 'downloader/response_count': 118,
+ 'downloader/response_status_count/200': 118,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2015, 10, 31, 5, 51, 44, 480718),
+ 'item_scraped_count': 117,
+ 'log_count/DEBUG': 238,
+ 'log_count/ERROR': 22,
+ 'log_count/INFO': 511,
+ 'request_depth_max': 1,
+ 'response_received_count': 118,
+ 'scheduler/dequeued': 118,
+ 'scheduler/dequeued/memory': 118,
+ 'scheduler/enqueued': 118,
+ 'scheduler/enqueued/memory': 118,
+ 'start_time': datetime.datetime(2015, 10, 31, 5, 49, 54, 172855)}
+2015-10-31 01:51:44 [scrapy] INFO: Spider closed (finished)

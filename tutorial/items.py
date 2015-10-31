@@ -8,7 +8,8 @@
 import scrapy
 
 
-class TutorialItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+class DmozItem(scrapy.Item):
+    player_name = scrapy.Field()
+    draft_year = scrapy.Field()
+    pfr_name = scrapy.Field()
+    position_type = scrapy.Field()
