@@ -22,7 +22,8 @@ class DmozSpider(scrapy.Spider):
     name = "dmoz"
     allowed_domains = ["pro-football-reference.com"]
     start_urls = [
-        "http://www.pro-football-reference.com/players/qbindex.htm"
+#        "http://www.pro-football-reference.com/players/qbindex.htm"
+        "http://www.pro-football-reference.com/players/rbindex.htm"
     ]
 
     print scrapy.settings.default_settings
