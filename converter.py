@@ -179,7 +179,7 @@ def assemble_payload(pguid, row, index, ff_points):
     # At this point they're gonna be conditional based on type...
     # QB related stats
     if 'Passing_Cmp' in row:
-        passing_data = {'gs': row['GS'],
+        passing_data = {'gs': row['GS'] if 'GS' in row else None,
                         'pass_comp': row['Passing_Cmp'],
                         'pass_att': row['Passing_Att'],
                         'comp_pct': row['Passing_Cmp%'],
@@ -350,11 +350,11 @@ def create_career_entry(career_payload):
                           auth=HTTPBasicAuth('andrasta', 'aA187759!'))
     print r.status_code
 #    print r.json()
-    if r.status_code == 201:
-        print r.json()
-    elif r.status_code >= 400:
-        print "Error is: ", r.status_code
-        print r.text
+#    if r.status_code == 201:
+##        print r.json()
+#    elif r.status_code >= 400:
+#        print "Error is: ", r.status_code
+#        print r.text
 #        sys.exit("Error in career creation")
 
 
@@ -374,26 +374,33 @@ def assemble_career_payload(pguid, df_career, payload, active):
                'end_year': payload['end_year'],
                'win_pct': win_pct,
                'active': active,
-               'pos_type': payload['position_type']}
+               'pos_type': payload['position_type'],
+               'player_name': payload['player_name']}
     return payload
 
+def assemble_empty_career_payload(pguid, payload, active):
+    payload = {'pguid': str(pguid),
+               'ff_pts': 0,
+               'start_year': payload['start_year'],
+               'end_year': payload['end_year'],
+               'win_pct': 0,
+               'active': active,
+               'pos_type': payload['position_type'],
+               'player_name': payload['player_name']}
+    return payload
 
 # Reading the json file
 with open('active_qbs.json') as data_file:
-    count = 0
     data = json.load(data_file)
     print len(data)
-    start = 1
     for i in data:
-        if count == start:
             fname = "QB_Active/players_" + i['player_name'].split(" ")[1][0] + "_" + i['pfr_name'] + "_gamelog___stats.csv"
             print fname
 
+            pguid = i['pfr_name']
+        #        print pguid
             if os.path.isfile(fname):
                 print "A csv files for " + i['player_name'] + "," + i['pfr_name'] + " exists is: " + str(os.path.isfile(fname))
-                # Generate the guid entry
-                pguid = i['pfr_name']
-        #        print pguid
 
                 # Fill out the payloads
                 game_payloads, season_payloads, df_career = get_data(fname, True, pguid)
@@ -411,10 +418,11 @@ with open('active_qbs.json') as data_file:
                 print "Seasons creation completed"
                 print "=========================="
                 create_career_entry(career_payload)
-        #        sys.exit("Finished career entries")
-        count+=1
-        if count == 10:
-            sys.exit("Count Reached")
+            else:
+#            if not os.path.isfile(fname):
+                print "No stats for " + i['player_name'] + " defaulting to zeros"
+                career_payload = assemble_empty_career_payload(pguid, i, True)
+                create_career_entry(career_payload)
 
 #pprint(data)
 
