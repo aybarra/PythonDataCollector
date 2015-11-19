@@ -22,8 +22,8 @@ class DmozSpider(scrapy.Spider):
     name = "dmoz"
     allowed_domains = ["pro-football-reference.com"]
     start_urls = [
-#        "http://www.pro-football-reference.com/players/qbindex.htm"
-        "http://www.pro-football-reference.com/players/rbindex.htm"
+        "http://www.pro-football-reference.com/players/qbindex.htm"
+#        "http://www.pro-football-reference.com/players/rbindex.htm"
     ]
 
     print scrapy.settings.default_settings
@@ -102,25 +102,49 @@ class DmozSpider(scrapy.Spider):
             # Inactive players
             if self.selection == 'retired':
                 for player_index in range(1, len(xpath_inactive)+1):
-                    player_link = response.xpath("//*/blockquote[" + str(letter) + "]/pre/a["+ str(player_index) + "]/@href")
+                    player_link = response.xpath("//*/blockquote[" + str(letter)
+                                                 + "]/pre/a["+ str(player_index) + "]/@href")
     #                print player_link
+                    played_text = response.xpath("normalize-space(//*/blockquote[" + str(letter)
+                                                 + "]/pre/a["+ str(player_index)
+                                                 + "]/following-sibling::text()["
+                                                 + str(player_index)+"])").extract_first()
+#                    self.logger.info("played_text is %s", played_text)
+                    dash_index = played_text.find("-")
+                    end_year = int(played_text[dash_index+1:])
+                    start_year = int(played_text[dash_index-4:dash_index])
+
+                    self.logger.info("start_date and end_date is: %i, %i", start_year, end_year)
+
                     if len(player_link) > 0:
                         url = response.urljoin(player_link[0].extract())
-                        yield scrapy.Request(url, callback=self.navGameLog)
+                        request = scrapy.Request(url, callback=self.navGameLog)
+                        request.meta['start_year'] = start_year
+                        request.meta['end_year'] = end_year
+                        yield request
 
             # Active players
             if self.selection == 'active':
                 self.logger.info("Number of active players for letter %s is: %s", string_letter, str(len(xpath_active)))
-                # Active players
                 for player_index in range(1, len(xpath_active)+1):
                     player_link = response.xpath("//*/blockquote[" + str(letter)
                                                  + "]/pre/b["+ str(player_index) + "]/a/@href")
-    #                print len(player_link)
+                    played_text = response.xpath("normalize-space(//*/blockquote[" + str(letter)
+                                                 + "]/pre/b["+ str(player_index)
+                                                 + "]/a/following-sibling::text()[1])").extract_first()
+                    dash_index = played_text.find("-")
+                    end_year = int(played_text[dash_index+1:])
+                    start_year = int(played_text[dash_index-4:dash_index])
+
+                    self.logger.info("start_date and end_date is: %i, %i", start_year, end_year)
+
                     # Checking if the link exists
                     if len(player_link) > 0:
                         url = response.urljoin(player_link[0].extract())
-    #                    print url
-                        yield scrapy.Request(url, callback=self.navGameLog)
+                        request = scrapy.Request(url, callback=self.navGameLog)
+                        request.meta['start_year'] = start_year
+                        request.meta['end_year'] = end_year
+                        yield request
 
     def navGameLog(self, response):
 
@@ -135,31 +159,29 @@ class DmozSpider(scrapy.Spider):
         htm_index = pfr_name.find(".htm")
         pfr_name = pfr_name[0:htm_index]
         item['pfr_name'] = pfr_name
+        item['start_year'] = response.meta['start_year']
+        item['end_year'] = response.meta['end_year']
 
         draft_year = -1
-        # Find the year the player was drafted
+        # Find the year the player was drafted, and override the start_year value if its earlier
         if len(response.xpath("//strong[contains(.,'Drafted')]")) > 0 and response.xpath("//strong[contains(.,'Drafted')]")[0].extract() != None:
             if len(response.xpath("//a[contains(.,'NFL Draft')]/text()")) > 0:
                 draft_year = response.xpath("//a[contains(.,'NFL Draft')]/text()")[0].extract()
                 nfl_index = draft_year.find("NFL Draft")
                 if nfl_index != -1:
                     draft_year = draft_year[0:nfl_index-1]
-                    if draft_year != None:
-                        item['draft_year'] = int(draft_year)
+                    if draft_year != None and int(draft_year) < item['start_year']:
+                        item['start_year'] = int(draft_year)
             elif len(response.xpath("//a[contains(.,'NFL Supplemental Draft')]/text()")) > 0:
                 draft_year = response.xpath("//a[contains(.,'NFL Supplemental Draft')]/text()")[0].extract()
                 nfl_index = draft_year.find("NFL Supplemental Draft")
                 if nfl_index != -1:
                     draft_year = draft_year[0:nfl_index-1]
-                    if draft_year != None:
-                        item['draft_year'] = int(draft_year)
+                    if draft_year != None and int(draft_year) < item['start_year']:
+                        item['start_year'] = int(draft_year)
 
-        else:
-            item['draft_year'] = draft_year
+        self.logger.info("Player's name is: %s, pfr_name is: %s, draft_year is: %s", player_name, pfr_name, draft_year)
 
-        self.logger.info("Player's name is: %s", player_name)
-        self.logger.info("Player's pfr_name is: %s", pfr_name)
-        self.logger.info("Player's draft year is: %s", draft_year)
         # Generate each of the players guids
 #        r = requests.post("http://127.0.0.1:8000/pfrguids/",
 #                          data = {"pro_football_ref_name": pfr_name, "player_full_name": player_name},

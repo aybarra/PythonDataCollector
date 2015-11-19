@@ -10,6 +10,8 @@ import scrapy
 
 class DmozItem(scrapy.Item):
     player_name = scrapy.Field()
-    draft_year = scrapy.Field()
+#    draft_year = scrapy.Field()
     pfr_name = scrapy.Field()
     position_type = scrapy.Field()
+    start_year = scrapy.Field()
+    end_year = scrapy.Field()

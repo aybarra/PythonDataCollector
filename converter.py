@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import os
+import os.path
 from sets import Set
 import csv
 import datetime
@@ -8,8 +9,11 @@ from datetime import date, timedelta
 import time
 import requests
 from requests.auth import HTTPBasicAuth
+import json
+from pprint import pprint
+import sys
 
-def get_data(filename, active):
+def get_data(filename, active, pguid):
 
 #    players_B_BarkMa00_gamelog
     players_index = filename.find("players_")
@@ -43,14 +47,13 @@ def get_data(filename, active):
             if row.startswith(',') or (row.startswith('Rk') and index > 2) or (not row):
                 skip_list.append(index)
             index+=1
-        print skip_list
-    print heading_dict
+#        print skip_list
+#    print heading_dict
 
     # Creating a dataframe ignoring the skip_list rows and indexed using the date
     df_temp = pd.read_csv(filename, index_col='Date',
             parse_dates=True, na_values=['nan', 'NaN'], skiprows=skip_list)
     df_temp = df_temp.fillna(0)
-
 
     # Column header renaming
     columns = list(df_temp.columns.values)
@@ -62,7 +65,7 @@ def get_data(filename, active):
     # Rename the columns in our dataframe
     df_temp.rename(columns=columns_map,inplace=True)
 
-    pguid = fetch_player_guid(pfr_name)
+#    pguid = fetch_player_guid(pfr_name)
 
     game_payloads, df_temp = create_game_entries(pguid, df_temp)
     # Call the create_game_entries
@@ -70,22 +73,11 @@ def get_data(filename, active):
     season_payloads, df_temp = create_season_entries(pguid, df_temp)
     # Call the create_season_entries
 
-    career_payload = assemble_career_payload(pguid, df_temp, active)
+#    career_payload = assemble_career_payload(pguid, df_temp, active)
+
     # Call create career_entry
-    return df_temp
+    return game_payloads, season_payloads, df_temp
 
-
-def assemble_career_payload(pguid, df_career):
-    '''
-    'pguid', 'ff_pts', 'start_date', 'end_date', 'win_pct'
-    '''
-    payload = {'pguid': str(pguid),
-               'ff_pts': df_career['ff_pts'].sum(),
-               'start_date': df_season.index[0],
-               'end_date': # TODO,
-               'win_pct': df_career['Wins'].sum()/len(df_season.index),
-               'active': active}
-    return payload
 
 def create_season_entries(pguid, df_career):
 
@@ -107,16 +99,21 @@ def create_season_entries(pguid, df_career):
         payloads.append(payload)
 #        print "Payload is:", payload
     df_career = pd.concat(frames)
-    return payload, df_career
+    return payloads, df_career
 
 '''
 Takes the sliced df and sums the appropriate columns
     and inserts values into a json payload
 '''
-def assemble_season_payload(pguid, df_season):
+def assemble_season_payload(pguid, df_season_slice):
 
     # Generating a wins column to be used later
-    df_season['Wins'] = np.where('W' in df_season['Result'], 1, 0)
+#    df_season['Wins']
+#    df_season.loc[:,'Wins'] = np.where('W' in df_season['Result'], 1, 0)
+
+    df_season = df_season_slice.copy(deep=True)
+    df_season.loc[:,'Wins'] = df_season['Result'].map(lambda x: 1 if 'W' in x else 0)
+
     payload = {'pguid': str(pguid),
                'year': df_season['Year'][0],
                'game_count_played': len(df_season.index),
@@ -148,17 +145,8 @@ def assemble_season_payload(pguid, df_season):
     # Punt return stats
     payload['pr_tds'] = pd.Series(df_season['Punt Returns_TD']).sum() if 'Punt Returns_TD' in df_season.columns else 0
 
+#    print df_season
     return payload, df_season
-
-'''
-    Executes the request to the Django server to make a season entry
-'''
-def create_season_entry(payload_list):
-    for i in payload_list:
-        r = requests.post("http://127.0.0.1:8000/seasons/",
-                          data=i,
-                          auth=HTTPBasicAuth('andrasta', 'aA187759!'))
-        print r.status_code
 
 '''
     Iterates over the loaded df to calculate ff_points and create game entries
@@ -168,24 +156,14 @@ def create_game_entries(pguid, df_career):
      # Iterate over the dataframe
     for index, row in df_career.iterrows():
         ff_points = calculate_game_ffpoints(row)
-        print ff_points
-        df_career.ix[index, 'ff_pts'] = ff_points
+#        print ff_points
+        df_career.ix[index, 'ff_pts'] = int(ff_points)
         payload = assemble_payload(pguid, row, index, ff_points)
-        print payload
+#        print payload
         payloads.append(payload)
 
     return payloads, df_career
 #        create_game_entry(payload)
-
-'''
-    Executes the request to the Django server to make a game entry
-'''
-def create_game_entry(payload_list):
-    for i in payload_list:
-        r = requests.post("http://127.0.0.1:8000/games/",
-                          data=i,
-                          auth=HTTPBasicAuth('andrasta', 'aA187759!'))
-        print r.status_code
 
 def assemble_payload(pguid, row, index, ff_points):
     data = {'pguid': str(pguid),
@@ -254,7 +232,7 @@ def assemble_payload(pguid, row, index, ff_points):
         temp.update(punt_ret_data)
         data = temp
 
-    data['game_ff_pts'] = ff_points
+    data['game_ff_pts'] = int(ff_points)
     return data
 
 def calculate_game_ffpoints(row):
@@ -306,13 +284,139 @@ def fetch_updated_column_names(columns, first_heading, heading_dict):
     columns_map['Unnamed: 6'] = 'Home or Away'
     return columns_map
 
+def create_player_guid(payload):
+    r = requests.post("http://127.0.0.1:8000/pfrguids/",
+                      auth=HTTPBasicAuth('andrasta', 'aA187759!'),
+                      data={'player_name': payload['player_name'],
+                            'pos_type': payload['position_type'],
+                            'pfr_name': payload['pfr_name']})
+    if r.status_code == 400:
+        return fetch_player_guid(payload['pfr_name'])
+    elif r.status_code == 201:
+#        print r.json()
+        return str(r.json()['pguid'])
+    else:
+        sys.exit("Invalid response from create player guid route")
+
 def fetch_player_guid(pfr_name):
 
     r = requests.get("http://127.0.0.1:8000/pfrguids/"+pfr_name+"/guid", auth=HTTPBasicAuth('andrasta', 'aA187759!'))
 #    print "Players guid is: ", str(r.json())
-    pguid = r.json()["pguid"]
+    print r.json()
+    pguid = r.json()['pguid']
 #    print "pguid is:", pguid
     return pguid
 
-stats_dir = os.path.join(os.getcwd(), "tutorial/")
-print get_data(os.path.join(stats_dir, "QB/players_B_BarkMa00_gamelog___stats.csv"), True)
+'''
+    Executes the request to the Django server to make a game entry
+'''
+def create_game_entry(payload_list):
+    for i in payload_list:
+        print "Payload is: ",i
+        r = requests.post("http://127.0.0.1:8000/games/",
+                          data=i,
+                          auth=HTTPBasicAuth('andrasta', 'aA187759!'))
+        if r.status_code >= 400:
+            print "Error is: ", r.status_code
+#            print r.text
+#            sys.exit("Error occurred")
+        else:
+            print r.status_code
+            print r.json
+
+'''
+    Executes the request to the Django server to make a season entry
+'''
+def create_season_entry(payload_list):
+
+    print "Payload list is: ", payload_list
+    for i in payload_list:
+        print "Payload is:", i
+        r = requests.post("http://127.0.0.1:8000/seasons/",
+                          data=i,
+                          auth=HTTPBasicAuth('andrasta', 'aA187759!'))
+        print r.status_code
+        if r.status_code >= 400:
+            print "Error is: ",r.status_code
+#            print r.text
+#            sys.exit("Error debug")
+        else:
+            print r.status_code
+
+def create_career_entry(career_payload):
+    print "Career payload is: ", career_payload
+    r = requests.post("http://127.0.0.1:8000/careers/",
+                          data=career_payload,
+                          auth=HTTPBasicAuth('andrasta', 'aA187759!'))
+    print r.status_code
+#    print r.json()
+    if r.status_code == 201:
+        print r.json()
+    elif r.status_code >= 400:
+        print "Error is: ", r.status_code
+        print r.text
+#        sys.exit("Error in career creation")
+
+
+def assemble_career_payload(pguid, df_career, payload, active):
+    '''
+    'pguid', 'ff_pts', 'start_date', 'end_date', 'win_pct'
+    '''
+
+    win_pct = df_career['Wins'].sum()/float(len(df_career.index))
+    win_pct_formatted = format(win_pct, '.5g')
+    win_pct = float(win_pct_formatted)
+    win_pct_formatted = format(win_pct, '.3f')
+    win_pct = float(win_pct_formatted)
+    payload = {'pguid': str(pguid),
+               'ff_pts': df_career['ff_pts'].sum(),
+               'start_year': payload['start_year'],
+               'end_year': payload['end_year'],
+               'win_pct': win_pct,
+               'active': active,
+               'pos_type': payload['position_type']}
+    return payload
+
+
+# Reading the json file
+with open('active_qbs.json') as data_file:
+    count = 0
+    data = json.load(data_file)
+    print len(data)
+    start = 1
+    for i in data:
+        if count == start:
+            fname = "QB_Active/players_" + i['player_name'].split(" ")[1][0] + "_" + i['pfr_name'] + "_gamelog___stats.csv"
+            print fname
+
+            if os.path.isfile(fname):
+                print "A csv files for " + i['player_name'] + "," + i['pfr_name'] + " exists is: " + str(os.path.isfile(fname))
+                # Generate the guid entry
+                pguid = i['pfr_name']
+        #        print pguid
+
+                # Fill out the payloads
+                game_payloads, season_payloads, df_career = get_data(fname, True, pguid)
+
+                # Call assemble career payload
+                career_payload = assemble_career_payload(pguid, df_career, i, True)
+                print career_payload
+
+                create_game_entry(game_payloads)
+                print "=========================="
+                print "Starting season creation"
+                print "=========================="
+                create_season_entry(season_payloads)
+                print "=========================="
+                print "Seasons creation completed"
+                print "=========================="
+                create_career_entry(career_payload)
+        #        sys.exit("Finished career entries")
+        count+=1
+        if count == 10:
+            sys.exit("Count Reached")
+
+#pprint(data)
+
+#stats_dir = os.path.join(os.getcwd(), "tutorial/")
+#print get_data(os.path.join(stats_dir, "QB/players_B_BarkMa00_gamelog___stats.csv"), True)
