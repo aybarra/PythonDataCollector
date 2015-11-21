@@ -393,6 +393,13 @@ def assemble_empty_career_payload(pguid, payload, active):
     return payload
 
 
+def create_season_average(season_avg_payload):
+    print "Season avg payload is: ", season_avg_payload
+    r = requests.post("http://127.0.0.1:8000/season-ffpt-averages/",
+                          data=season_avg_payload,
+                          auth=HTTPBasicAuth('andrasta', 'aA187759!'))
+    print r.status_code
+
 parser = argparse.ArgumentParser(description='Converter options.')
 parser.add_argument('-input_file', metavar='i',
                    help='Input json file that contains player information')
@@ -407,39 +414,57 @@ with open(args.input_file) as data_file:
     data = json.load(data_file)
     print len(data)
     count = 0
+
+    season_totals = {}
+    season_player_num = {}
     for i in data:
-            if args.type == "QB":
-                fname = "QB_Active/players_" + i['player_name'].split(" ")[1][0] + "_" + i['pfr_name'] + "_gamelog___stats.csv"
-            elif args.type == "RB":
-                fname = "RB_Active/players_" + i['player_name'].split(" ")[1][0] + "_" + i['pfr_name'] + "_gamelog___stats.csv"
-            print fname
+        if args.type == "QB":
+            fname = "QB_Active/players_" + i['player_name'].split(" ")[1][0] + "_" + i['pfr_name'] + "_gamelog___stats.csv"
+        elif args.type == "RB":
+            fname = "RB_Active/players_" + i['player_name'].split(" ")[1][0] + "_" + i['pfr_name'] + "_gamelog___stats.csv"
+        print fname
 
-            pguid = i['pfr_name']
-        #        print pguid
-            if os.path.isfile(fname):
-                print "A csv files for " + i['player_name'] + "," + i['pfr_name'] + " exists is: " + str(os.path.isfile(fname))
+        pguid = i['pfr_name']
+    #        print pguid
+        if os.path.isfile(fname):
+            print "A csv files for " + i['player_name'] + "," + i['pfr_name'] + " exists is: " + str(os.path.isfile(fname))
 
-                # Fill out the payloads
-                game_payloads, season_payloads, df_career = get_data(fname, True, pguid)
+            # Fill out the payloads
+            game_payloads, season_payloads, df_career = get_data(fname, True, pguid)
 
-                # Call assemble career payload
-                career_payload = assemble_career_payload(pguid, df_career, i, True)
-                print career_payload
+            # Call assemble career payload
+            career_payload = assemble_career_payload(pguid, df_career, i, True)
+            print career_payload
 
-                create_game_entry(game_payloads)
-                print "=========================="
-                print "Starting season creation"
-                print "=========================="
-                create_season_entry(season_payloads)
-                print "=========================="
-                print "Seasons creation completed"
-                print "=========================="
-                create_career_entry(career_payload)
+            # Look over all season payloads
+            for season in season_payloads:
+                if season['year'] not in season_totals:
+                    season_totals[season['year']] = season['season_ff_pts']
+                else:
+                    season_totals[season['year']] += season['season_ff_pts']
+        else:
+            print "No stats for " + i['player_name']
+
+        # Increment the number of players for each of the years played
+        for j in range(i['start_year'], i['end_year']+1):
+            if j not in season_player_num:
+                season_player_num[j] = 1
             else:
-#            if not os.path.isfile(fname):
-                print "No stats for " + i['player_name'] + " defaulting to zeros"
-                career_payload = assemble_empty_career_payload(pguid, i, True)
-                create_career_entry(career_payload)
+                season_player_num[j] += 1
 
-            if count == 0:
-                sys.exit("completed")
+    print "SEASON TOTAL FF_PTS:", season_totals
+    print "TOTAL NUMBER OF PLAYERS PER SEASON", season_player_num
+
+    season_averages = {}
+    for t in season_totals.keys():
+        season_averages[t] = int(season_totals[t]/season_player_num[t])
+
+    print "SEASON AVERAGES", season_averages
+
+    for key in season_averages:
+        create_season_average({'year':key, 'ff_pt_average':season_averages[key]})
+
+#            if count == 0:
+#                print season_player_num
+#                print season_totals
+#                sys.exit("completed")

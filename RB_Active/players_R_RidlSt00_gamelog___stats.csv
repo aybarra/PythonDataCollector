@@ -59,4 +59,8 @@ Rk,Year,G#,Date,Age,Tm,,Opp,Result,Att,Yds,Y/A,TD,Tgt,Rec,Yds,Y/R,TD,Rt,Yds,Y/Rt
 50,2014,4,2014-09-29,25-245,NWE,@,KAN,L 14-41,5,28,5.60,0,1,0,0,,0,0,0,,0,0,0,0.0,0,0
 51,2014,5,2014-10-05,25-251,NWE,,CIN,W 43-17,27,113,4.19,1,0,0,0,,0,0,0,,0,1,6,0.0,0,0
 52,2014,6,2014-10-12,25-258,NWE,@,BUF,W 37-22,10,23,2.30,0,1,1,6,6.00,0,0,0,,0,0,0,0.0,0,0
-,,,52 Games,,,,,40-12-0,649,2817,4.34,22,36,23,146,6.35,0,7,152,21.71,0,22,132,0.0,1,0
+,,,,,,,,,Rushing,Rushing,Rushing,Rushing,Receiving,Receiving,Receiving,Receiving,Receiving,Kick Returns,Kick Returns,Kick Returns,Kick Returns,Scoring,Scoring,Sacks &amp; Tackles,Sacks &amp; Tackles,Sacks &amp; Tackles
+Rk,Year,G#,Date,Age,Tm,,Opp,Result,Att,Yds,Y/A,TD,Tgt,Rec,Yds,Y/R,TD,Rt,Yds,Y/Rt,TD,TD,Pts,Sk,Tkl,Ast
+53,2015,7,2015-11-01,26-278,NYJ,@,OAK,L 20-34,0,0,,0,0,0,0,,0,0,0,,0,0,0,0.0,0,0
+54,2015,9,2015-11-12,26-289,NYJ,,BUF,L 17-22,3,-1,-0.33,0,0,0,0,,0,0,0,,0,0,0,0.0,0,0
+,,,54 Games,,,,,40-14-0,652,2816,4.32,22,36,23,146,6.35,0,7,152,21.71,0,22,132,0.0,1,0

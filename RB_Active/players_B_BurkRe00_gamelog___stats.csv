@@ -1,24 +1,27 @@
 
-,,,,,,,,,Rushing,Rushing,Rushing,Rushing,Receiving,Receiving,Receiving,Receiving,Receiving,Scoring,Scoring,Sacks &amp; Tackles,Sacks &amp; Tackles,Sacks &amp; Tackles
-Rk,Year,G#,Date,Age,Tm,,Opp,Result,Att,Yds,Y/A,TD,Tgt,Rec,Yds,Y/R,TD,TD,Pts,Sk,Tkl,Ast
+,,,,,,,,,Receiving,Receiving,Receiving,Receiving,Receiving,Rushing,Rushing,Rushing,Rushing,Scoring,Scoring,Sacks &amp; Tackles,Sacks &amp; Tackles,Sacks &amp; Tackles
+Rk,Year,G#,Date,Age,Tm,,Opp,Result,Tgt,Rec,Yds,Y/R,TD,Att,Yds,Y/A,TD,TD,Pts,Sk,Tkl,Ast
 1,2013,10,2013-11-10,23-131,CIN,@,BAL,L 17-20,,,,,,,,,,,,,,
-,,,,,,,,,Rushing,Rushing,Rushing,Rushing,Receiving,Receiving,Receiving,Receiving,Receiving,Scoring,Scoring,Sacks &amp; Tackles,Sacks &amp; Tackles,Sacks &amp; Tackles
-Rk,Year,G#,Date,Age,Tm,,Opp,Result,Att,Yds,Y/A,TD,Tgt,Rec,Yds,Y/R,TD,TD,Pts,Sk,Tkl,Ast
-2,2014,5,2014-10-12,24-102,CIN,,CAR,T 37-37,0,0,,0,0,0,0,,0,0,0,0.0,1,0
+,,,,,,,,,Receiving,Receiving,Receiving,Receiving,Receiving,Rushing,Rushing,Rushing,Rushing,Scoring,Scoring,Sacks &amp; Tackles,Sacks &amp; Tackles,Sacks &amp; Tackles
+Rk,Year,G#,Date,Age,Tm,,Opp,Result,Tgt,Rec,Yds,Y/R,TD,Att,Yds,Y/A,TD,TD,Pts,Sk,Tkl,Ast
+2,2014,5,2014-10-12,24-102,CIN,,CAR,T 37-37,0,0,0,,0,0,0,,0,0,0,0.0,1,0
 3,2014,6,2014-10-19,24-109,CIN,@,IND,L 0-27,,,,,,,,,,,,,,
-4,2014,8,2014-11-02,24-123,CIN,,JAX,W 33-23,0,0,,0,3,2,10,5.00,0,0,0,0.0,0,1
-5,2014,9,2014-11-06,24-127,CIN,,CLE,L 3-24,4,12,3.00,0,4,2,3,1.50,0,0,0,0.0,0,0
-6,2014,10,2014-11-16,24-137,CIN,@,NOR,W 27-10,2,1,0.50,0,3,3,36,12.00,0,0,0,0.0,0,0
+4,2014,8,2014-11-02,24-123,CIN,,JAX,W 33-23,3,2,10,5.00,0,0,0,,0,0,0,0.0,0,1
+5,2014,9,2014-11-06,24-127,CIN,,CLE,L 3-24,4,2,3,1.50,0,4,12,3.00,0,0,0,0.0,0,0
+6,2014,10,2014-11-16,24-137,CIN,@,NOR,W 27-10,3,3,36,12.00,0,2,1,0.50,0,0,0,0.0,0,0
 7,2014,13,2014-12-07,24-158,CIN,,PIT,L 21-42,,,,,,,,,,,,,,
-8,2014,14,2014-12-14,24-165,CIN,@,CLE,W 30-0,3,14,4.67,1,0,0,0,,0,1,6,0.0,0,1
-9,2014,15,2014-12-22,24-173,CIN,,DEN,W 37-28,0,0,,0,,0,0,,0,0,0,0.0,0,1
-10,2014,16,2014-12-28,24-179,CIN,@,PIT,L 17-27,0,0,,0,,0,0,,0,0,0,0.0,0,1
-,,,,,,,,,Rushing,Rushing,Rushing,Rushing,Receiving,Receiving,Receiving,Receiving,Receiving,Scoring,Scoring,Sacks &amp; Tackles,Sacks &amp; Tackles,Sacks &amp; Tackles
-Rk,Year,G#,Date,Age,Tm,,Opp,Result,Att,Yds,Y/A,TD,Tgt,Rec,Yds,Y/R,TD,TD,Pts,Sk,Tkl,Ast
-11,2015,1,2015-09-13,25-073,CIN,@,OAK,W 33-13,0,0,,0,1,1,24,24.00,0,0,0,0.0,0,0
-12,2015,2,2015-09-20,25-080,CIN,,SDG,W 24-19,0,0,,0,2,1,8,8.00,0,0,0,0.0,0,0
-13,2015,3,2015-09-27,25-087,CIN,@,BAL,W 28-24,0,0,,0,0,0,0,,0,0,0,0.0,0,0
-14,2015,4,2015-10-04,25-094,CIN,,KAN,W 36-21,0,0,,0,1,1,27,27.00,0,0,0,0.0,0,0
-15,2015,5,2015-10-11,25-101,CIN,,SEA,W 27-24,1,-2,-2.00,0,0,0,0,,0,0,0,0.0,0,0
-16,2015,6,2015-10-18,25-108,CIN,@,BUF,W 34-21,0,0,,0,,0,0,,0,0,0,0.0,0,0
-,,,16 Games,,,,,10-5-1,10,25,2.50,1,14,10,108,10.80,0,1,6,0.0,1,4
+8,2014,14,2014-12-14,24-165,CIN,@,CLE,W 30-0,0,0,0,,0,3,14,4.67,1,1,6,0.0,0,1
+9,2014,15,2014-12-22,24-173,CIN,,DEN,W 37-28,,0,0,,0,0,0,,0,0,0,0.0,0,1
+10,2014,16,2014-12-28,24-179,CIN,@,PIT,L 17-27,,0,0,,0,0,0,,0,0,0,0.0,0,1
+,,,,,,,,,Receiving,Receiving,Receiving,Receiving,Receiving,Rushing,Rushing,Rushing,Rushing,Scoring,Scoring,Sacks &amp; Tackles,Sacks &amp; Tackles,Sacks &amp; Tackles
+Rk,Year,G#,Date,Age,Tm,,Opp,Result,Tgt,Rec,Yds,Y/R,TD,Att,Yds,Y/A,TD,TD,Pts,Sk,Tkl,Ast
+11,2015,1,2015-09-13,25-073,CIN,@,OAK,W 33-13,1,1,24,24.00,0,0,0,,0,0,0,0.0,0,0
+12,2015,2,2015-09-20,25-080,CIN,,SDG,W 24-19,2,1,8,8.00,0,0,0,,0,0,0,0.0,0,0
+13,2015,3,2015-09-27,25-087,CIN,@,BAL,W 28-24,0,0,0,,0,0,0,,0,0,0,0.0,0,0
+14,2015,4,2015-10-04,25-094,CIN,,KAN,W 36-21,1,1,27,27.00,0,0,0,,0,0,0,0.0,0,0
+15,2015,5,2015-10-11,25-101,CIN,,SEA,W 27-24,0,0,0,,0,1,-2,-2.00,0,0,0,0.0,0,0
+16,2015,6,2015-10-18,25-108,CIN,@,BUF,W 34-21,0,0,0,,0,0,0,,0,0,0,0.0,0,0
+17,2015,7,2015-11-01,25-122,CIN,@,PIT,W 16-10,0,0,0,,0,0,0,,0,0,0,0.0,0,0
+18,2015,8,2015-11-05,25-126,CIN,,CLE,W 31-10,1,1,7,7.00,0,0,0,,0,0,0,0.0,0,0
+19,2015,9,2015-11-16,25-137,CIN,,HOU,L 6-10,1,0,0,,0,0,0,,0,0,0,0.0,0,0
+,,,19 Games,,,,,12-6-1,16,11,115,10.45,0,10,25,2.50,1,1,6,0.0,1,4
