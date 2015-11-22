@@ -22,8 +22,8 @@ class DmozSpider(scrapy.Spider):
     name = "dmoz"
     allowed_domains = ["pro-football-reference.com"]
     start_urls = [
-#        "http://www.pro-football-reference.com/players/qbindex.htm"
-        "http://www.pro-football-reference.com/players/rbindex.htm"
+        "http://www.pro-football-reference.com/players/qbindex.htm"
+#        "http://www.pro-football-reference.com/players/rbindex.htm"
     ]
 
     print scrapy.settings.default_settings
@@ -101,27 +101,30 @@ class DmozSpider(scrapy.Spider):
 
             # Inactive players
             if self.selection == 'retired':
+                self.logger.info("NUMBER OF PLAYERS WITH LETTER %i is: %i", letter, len(xpath_inactive)+1)
                 for player_index in range(1, len(xpath_inactive)+1):
                     player_link = response.xpath("//*/blockquote[" + str(letter)
                                                  + "]/pre/a["+ str(player_index) + "]/@href")
     #                print player_link
                     played_text = response.xpath("normalize-space(//*/blockquote[" + str(letter)
                                                  + "]/pre/a["+ str(player_index)
-                                                 + "]/following-sibling::text()["
-                                                 + str(player_index)+"])").extract_first()
-#                    self.logger.info("played_text is %s", played_text)
-                    dash_index = played_text.find("-")
-                    end_year = int(played_text[dash_index+1:])
-                    start_year = int(played_text[dash_index-4:dash_index])
+                                                 + "]/following-sibling::text()[1])").extract_first()
 
-                    self.logger.info("start_date and end_date is: %i, %i", start_year, end_year)
+                    self.logger.info("played_text is %s", played_text)
+                    # Need to get the last occurrence because of mixed qb types
+                    dash_index = played_text.rfind("-")
+                    self.logger.info("Dash index is %s", dash_index)
+                    if dash_index != -1:
+                        end_year = int(played_text[dash_index+1:])
+                        start_year = int(played_text[dash_index-4:dash_index])
+                        self.logger.info("start_date and end_date is: %i, %i", start_year, end_year)
 
-                    if len(player_link) > 0:
-                        url = response.urljoin(player_link[0].extract())
-                        request = scrapy.Request(url, callback=self.navGameLog)
-                        request.meta['start_year'] = start_year
-                        request.meta['end_year'] = end_year
-                        yield request
+                        if len(player_link) > 0:
+                            url = response.urljoin(player_link[0].extract())
+                            request = scrapy.Request(url, callback=self.navGameLog)
+                            request.meta['start_year'] = start_year
+                            request.meta['end_year'] = end_year
+                            yield request
 
             # Active players
             if self.selection == 'active':
@@ -181,12 +184,6 @@ class DmozSpider(scrapy.Spider):
                         item['start_year'] = int(draft_year)
 
         self.logger.info("Player's name is: %s, pfr_name is: %s, draft_year is: %s", player_name, pfr_name, draft_year)
-
-        # Generate each of the players guids
-#        r = requests.post("http://127.0.0.1:8000/pfrguids/",
-#                          data = {"pro_football_ref_name": pfr_name, "player_full_name": player_name},
-#                          auth=HTTPBasicAuth('andrasta', 'aA187759!'))
-#        self.logger.info("Output from post is: %s",str(r.json()))
 
         # Checking to see if gamelogs exist
         gameLogsXPath = ""
