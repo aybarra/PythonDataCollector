@@ -23,7 +23,9 @@ class DmozSpider(scrapy.Spider):
     allowed_domains = ["pro-football-reference.com"]
     start_urls = [
 #        "http://www.pro-football-reference.com/players/qbindex.htm"
-        "http://www.pro-football-reference.com/players/rbindex.htm"
+#        "http://www.pro-football-reference.com/players/rbindex.htm"
+#        "http://www.pro-football-reference.com/players/wrindex.htm"
+        "http://www.pro-football-reference.com/players/teindex.htm"
     ]
 
     print scrapy.settings.default_settings
@@ -135,19 +137,20 @@ class DmozSpider(scrapy.Spider):
                     played_text = response.xpath("normalize-space(//*/blockquote[" + str(letter)
                                                  + "]/pre/b["+ str(player_index)
                                                  + "]/a/following-sibling::text()[1])").extract_first()
-                    dash_index = played_text.find("-")
-                    end_year = int(played_text[dash_index+1:])
-                    start_year = int(played_text[dash_index-4:dash_index])
+                    dash_index = played_text.rfind("-")
+                    if dash_index != -1:
+                        end_year = int(played_text[dash_index+1:])
+                        start_year = int(played_text[dash_index-4:dash_index])
 
-                    self.logger.info("start_date and end_date is: %i, %i", start_year, end_year)
+                        self.logger.info("start_date and end_date is: %i, %i", start_year, end_year)
 
-                    # Checking if the link exists
-                    if len(player_link) > 0:
-                        url = response.urljoin(player_link[0].extract())
-                        request = scrapy.Request(url, callback=self.navGameLog)
-                        request.meta['start_year'] = start_year
-                        request.meta['end_year'] = end_year
-                        yield request
+                        # Checking if the link exists
+                        if len(player_link) > 0:
+                            url = response.urljoin(player_link[0].extract())
+                            request = scrapy.Request(url, callback=self.navGameLog)
+                            request.meta['start_year'] = start_year
+                            request.meta['end_year'] = end_year
+                            yield request
 
     def navGameLog(self, response):
 
