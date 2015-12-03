@@ -13,7 +13,11 @@ import json
 from pprint import pprint
 import sys
 import argparse
+import logging
+import datetime
 
+
+logging.basicConfig(filename='rbs_retired_converter\''+ str(datetime.datetime.now())+'\'.log',level=logging.DEBUG)
 
 def get_data(filename, active, pguid):
 
@@ -353,10 +357,10 @@ def create_career_entry(career_payload):
                           auth=HTTPBasicAuth('andrasta', 'aA187759!'))
     print r.status_code
 #    print r.json()
-#    if r.status_code == 201:
-##        print r.json()
-#    elif r.status_code >= 400:
-#        print "Error is: ", r.status_code
+    if r.status_code == 201:
+        print r.json()
+    elif r.status_code >= 400:
+        print "Error is: ", r.status_code
 #        print r.text
 #        sys.exit("Error in career creation")
 
@@ -401,45 +405,62 @@ parser.add_argument('-type',
 args = parser.parse_args()
 print args.input_file
 print args.type
-
+if args.type != "QB_Active" and args.type != "RB_Active" and args.type != "QB_Retired" and args.type != "RB_Retired":
+    sys.exit("INVALID TYPE")
 # Reading the json file
 with open(args.input_file) as data_file:
     data = json.load(data_file)
     print len(data)
     count = 0
     for i in data:
-            if args.type == "QB":
+        if count > 2547:
+            if args.type == "QB_Active":
                 fname = "QB_Active/players_" + i['player_name'].split(" ")[1][0] + "_" + i['pfr_name'] + "_gamelog___stats.csv"
-            elif args.type == "RB":
+            elif args.type == "RB_Active":
                 fname = "RB_Active/players_" + i['player_name'].split(" ")[1][0] + "_" + i['pfr_name'] + "_gamelog___stats.csv"
+            elif args.type == "QB_Retired":
+                fname = "QB_Retired/players_" + i['player_name'].split(" ")[1][0] + "_" + i['pfr_name'] + "_gamelog___stats.csv"
+            elif args.type == "RB_Retired":
+                fname = "RB_Retired/players_" + i['player_name'].split(" ")[1][0] + "_" + i['pfr_name'] + "_gamelog___stats.csv"
             print fname
+            active = (args.type.find("Active") != -1)
 
             pguid = i['pfr_name']
         #        print pguid
             if os.path.isfile(fname):
                 print "A csv files for " + i['player_name'] + "," + i['pfr_name'] + " exists is: " + str(os.path.isfile(fname))
 
-                # Fill out the payloads
-                game_payloads, season_payloads, df_career = get_data(fname, True, pguid)
+                import logging
+                try:
+                    # Fill out the payloads
+                    game_payloads, season_payloads, df_career = get_data(fname, active, pguid)
 
-                # Call assemble career payload
-                career_payload = assemble_career_payload(pguid, df_career, i, True)
-                print career_payload
+                    # Call assemble career payload
+                    career_payload = assemble_career_payload(pguid, df_career, i, active)
+                    print career_payload
 
-                create_game_entry(game_payloads)
-                print "=========================="
-                print "Starting season creation"
-                print "=========================="
-                create_season_entry(season_payloads)
-                print "=========================="
-                print "Seasons creation completed"
-                print "=========================="
-                create_career_entry(career_payload)
+                    print "=========================="
+                    print "Starting GAMES creation"
+                    print "=========================="
+                    create_game_entry(game_payloads)
+                    print "=========================="
+                    print "GAMES creation completed"
+                    print "=========================="
+                    print "=========================="
+                    print "Starting SEASONS creation"
+                    print "=========================="
+                    create_season_entry(season_payloads)
+                    print "=========================="
+                    print "SEASONS creation completed"
+                    print "=========================="
+                    create_career_entry(career_payload)
+                except Exception:
+                    logging.exception("Error Occurred with" + pguid + " on json line " + str(count))
             else:
 #            if not os.path.isfile(fname):
                 print "No stats for " + i['player_name'] + " defaulting to zeros"
-                career_payload = assemble_empty_career_payload(pguid, i, True)
+                career_payload = assemble_empty_career_payload(pguid, i, active)
                 create_career_entry(career_payload)
 
-            if count == 0:
-                sys.exit("completed")
+        count += 1
+    print count + " players processed"
