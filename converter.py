@@ -405,7 +405,7 @@ parser.add_argument('-type',
 args = parser.parse_args()
 print args.input_file
 print args.type
-if args.type != "QB_Active" and args.type != "RB_Active" and args.type != "QB_Retired" and args.type != "RB_Retired" and args.type != "WR_Active":
+if args.type != "QB_Active" and args.type != "RB_Active" and args.type != "QB_Retired" and args.type != "RB_Retired" and args.type != "WR_Active" and args.type != "TE_Active":
     sys.exit("INVALID TYPE")
 # Reading the json file
 with open(args.input_file) as data_file:
@@ -413,7 +413,7 @@ with open(args.input_file) as data_file:
     print len(data)
     count = 0
     for i in data:
-        if count > 2547:
+        if count > -1:
             if args.type == "QB_Active":
                 fname = "QB_Active/players_" + i['player_name'].split(" ")[1][0] + "_" + i['pfr_name'] + "_gamelog___stats.csv"
             elif args.type == "RB_Active":
@@ -424,6 +424,8 @@ with open(args.input_file) as data_file:
                 fname = "RB_Retired/players_" + i['player_name'].split(" ")[1][0] + "_" + i['pfr_name'] + "_gamelog___stats.csv"
             elif args.type == "WR_Active":
                 fname = "WR_Active/players_" + i['player_name'].split(" ")[1][0] + "_" + i['pfr_name'] + "_gamelog___stats.csv"
+            elif args.type == "TE_Active":
+                fname = "TE_Active/players_" + i['player_name'].split(" ")[1][0] + "_" + i['pfr_name'] + "_gamelog___stats.csv"
             print fname
             active = (args.type.find("Active") != -1)
 
@@ -465,4 +467,4 @@ with open(args.input_file) as data_file:
                 create_career_entry(career_payload)
 
         count += 1
-    print count + " players processed"
+    print str(count) + " players processed"

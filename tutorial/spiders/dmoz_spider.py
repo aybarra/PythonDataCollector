@@ -22,10 +22,10 @@ class DmozSpider(scrapy.Spider):
     name = "dmoz"
     allowed_domains = ["pro-football-reference.com"]
     start_urls = [
-#        "http://www.pro-football-reference.com/players/qbindex.htm"
+        "http://www.pro-football-reference.com/players/qbindex.htm"
 #        "http://www.pro-football-reference.com/players/rbindex.htm"
 #        "http://www.pro-football-reference.com/players/wrindex.htm"
-        "http://www.pro-football-reference.com/players/teindex.htm"
+#        "http://www.pro-football-reference.com/players/teindex.htm"
     ]
 
     print scrapy.settings.default_settings
@@ -61,6 +61,15 @@ class DmozSpider(scrapy.Spider):
             self.collect_csvs = False
         else:
             sys.exit("Collect csvs set to invalid value")
+
+        if self.selection == 'retired':
+            self.old_guys = [kwargs.get('old_guys')][0]
+            self.logger.info("Old Guys is set to %s", str(self.old_guys))
+            if self.old_guys == None:
+                sys.exit("Old guys not set!")
+            elif self.old_guys != "True" and self.old_guys != "False":
+                sys.exit("Old guys set to invalid value!")
+
 
         # If they had college stats
         self.gameLogsXPathCollege = "//*/*[1]/*/*[3]/a[contains(.,'Gamelogs')]"
@@ -121,12 +130,22 @@ class DmozSpider(scrapy.Spider):
                         start_year = int(played_text[dash_index-4:dash_index])
                         self.logger.info("start_date and end_date is: %i, %i", start_year, end_year)
 
-                        if len(player_link) > 0:
-                            url = response.urljoin(player_link[0].extract())
-                            request = scrapy.Request(url, callback=self.navGameLog)
-                            request.meta['start_year'] = start_year
-                            request.meta['end_year'] = end_year
-                            yield request
+                        if self.old_guys:
+                            if len(player_link) > 0:
+                                # Only fetch old guys
+                                if start_year <= 1960:
+                                    url = response.urljoin(player_link[0].extract())
+                                    request = scrapy.Request(url, callback=self.navSeasonCSV)
+                                    request.meta['start_year'] = start_year
+                                    request.meta['end_year'] = end_year
+                                    yield request
+                        else:
+                            if len(player_link) > 0:
+                                url = response.urljoin(player_link[0].extract())
+                                request = scrapy.Request(url, callback=self.navGameLog)
+                                request.meta['start_year'] = start_year
+                                request.meta['end_year'] = end_year
+                                yield request
 
             # Active players
             if self.selection == 'active':
@@ -151,6 +170,50 @@ class DmozSpider(scrapy.Spider):
                             request.meta['start_year'] = start_year
                             request.meta['end_year'] = end_year
                             yield request
+
+    def navSeasonCSV(self, response):
+        item = DmozItem()
+
+        # Find player's name
+        player_name = response.xpath("//*[@id=\"you_are_here\"]/p/span[5]/b/span/text()")[0].extract()
+        item['player_name'] = player_name
+        item['position_type'] = self.position_type
+
+        # Find player's pfr name
+        pfr_name = response.url.rsplit('/',1)[-1]
+        htm_index = pfr_name.find(".htm")
+        pfr_name = pfr_name[0:htm_index]
+        item['pfr_name'] = pfr_name
+        item['start_year'] = response.meta['start_year']
+        item['end_year'] = response.meta['end_year']
+
+        if self.collect_csvs == True:
+
+            # Load the response url in selenium
+            self.driver.get(response.url)
+            self.logger.debug("Selenium navigated to %s", str(response.url))
+
+            season_passingCSVXPath = "(//h2[contains(.,'Passing')]/following-sibling::*[1]/*[contains(.,'Export')])[1]"
+
+            # Find the passing export link
+            csvLink = self.wait.until(EC.element_to_be_clickable((By.XPATH, season_passingCSVXPath)))
+            if csvLink != None: self.logger.info("Text for the export link is: %s", csvLink.text)
+            if csvLink != None and csvLink.text == "Export":
+                ActionChains(self.driver).click(csvLink).perform()
+                self.logger.debug("Selenium clicked the csv export link")
+            else:
+                self.logger.error("Player %s has no passing stats to export", player_name)
+
+
+            season_rushingCSVXPath = "(//h2[contains(.,'Rushing & Receiving')]/following-sibling::*[1]/*[contains(.,'Export')])[1]"
+            csvLink = self.wait.until(EC.element_to_be_clickable((By.XPATH, season_rushingCSVXPath)))
+            if csvLink != None: self.logger.info("Text for the export link is: %s", csvLink.text)
+            if csvLink != None and csvLink.text == "Export":
+                ActionChains(self.driver).click(csvLink).perform()
+                self.logger.debug("Selenium clicked the csv export link")
+            else:
+                self.logger.error("Player %s has no rushing&receiving stats to export", player_name)
+        yield item
 
     def navGameLog(self, response):
 
@@ -203,6 +266,7 @@ class DmozSpider(scrapy.Spider):
             # Even if they don't have stats we need their name for record keeping
 #            yield item
 
+        # Will grab the regular csvs
         if self.collect_csvs == True:
             if gameLogsXPath != "":
 
